@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% set title = _('Overview') %}
+{% block body %}
+
+  <h1>DisplayLink DL-7450 Software Development Kit</h1>
+
+  <p>
+    {{ _('Welcome to the DisplayLink DL-7450 SDK documentation.') }}
+  </p>
+
+  <p><strong>Introduction:</strong></p>
+  <table class="contentstable"><tr>
+    <td width="40%" style="padding-left:2em;">
+      <p class="biglink">
+        <a class="biglink" href="{{ pathto("dl_7450/introduction") }}">Introduction to the DisplayLink DL-7450 SDK</a><br/>
+        <span class="linkdescr">An overview of the DisplayLink DL-7450 chip and the SDK</span>
+      </p>
+    </td>
+  </tr></table>
+
+  <p><strong>Getting started guide:</strong></p>
+
+  <table class="contentstable"><tr>
+    <td width="40%" style="padding-left:2em;">
+      <p class="biglink">
+        <a class="biglink" href="{{ pathto("dl_7450/start") }}">Getting started with the DisplayLink DL-7450 SDK</a><br/>
+        <span class="linkdescr">A guide to getting started with DisplayLink DL-7450 application development</span>
+      </p>
+      <p class="biglink">
+        <a class="biglink" href="{{ pathto("dl_7450/quickref") }}">Quick reference for the DisplayLink DL-7450 SDK</a><br/>
+        <span class="linkdescr">Includes code examples and a brief tutorial</span>
+      </p>
+      <p class="biglink">
+    </td>
+  </tr></table>
+
+
+  <p><strong>General documentation:</strong></p>
+
+  <table class="contentstable"><tr>
+    <td width="40%" style="padding-left:2em;">
+      <p class="biglink">
+        <a class="biglink" href="{{ pathto("library/index") }}">Library Reference</a><br/>
+        <span class="linkdescr">Python libraries and modules</span>
+      </p>
+      <p class="biglink">
+        <a class="biglink" href="{{ pathto("license") }}">License</a><br/>
+        <span class="linkdescr">DisplayLink DL-7450 SDK license</span>
+      </p>
+    </td>
+  </tr></table>
+
+  <p><strong>Indices and tables:</strong></p>
+
+  <table class="contentstable"><tr>
+    <td width="40%" style="padding-left:2em;">
+      <p class="biglink">
+        <a class="biglink" href="{{ pathto("py-modindex") }}">Module index</a><br/>
+        <span class="linkdescr">quick access to all modules</span>
+      </p>
+      <p class="biglink">
+        <a class="biglink" href="{{ pathto("genindex") }}">Full index</a><br/>
+        <span class="linkdescr">all functions, classes, constants</span>
+      </p>
+    </td>
+    <td width="40%" style="padding-left:2em;">
+      <p class="biglink">
+        <a class="biglink" href="{{ pathto("index") }}">Table of contents</a><br/>
+        <span class="linkdescr">a list of all sections and subsections</span>
+      </p>
+    </td></tr>
+  </table>
+
+  <p><strong>External links:</strong></p>
+
+  <table class="contentstable"><tr>
+    <td width="40%" style="padding-left:2em;">
+      <p class="biglink">
+        <a class="biglink" href="https://github.com/DisplayLink/dl-7450">DisplayLink DL-7450 SDK on GitHub</a><br/>
+        <span class="linkdescr">Coming soon: samples of code on GitHub</span>
+      </p>
+    </td>
+  </tr></table>
+
+{% endblock %}
