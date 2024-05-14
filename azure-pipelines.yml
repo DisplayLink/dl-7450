@@ -1,0 +1,37 @@
+trigger:
+  - "*"
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - checkout: self
+
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: "3.11"
+      addToPath: true
+
+  - script: |
+      python3 -m pip install --user --upgrade pip setuptools wheel
+      python3 -m pip install --user --upgrade --requirement docs/requirements.txt
+    displayName: "Setup Python Environment"
+    condition: succeeded()
+
+  - script: |  # Build script
+      cd docs
+      make html
+    displayName: "Build Html"
+    condition: succeeded()
+
+  - task: AzureStaticWebApp@0
+    inputs:
+      app_location: "build/html"
+      api_location: ""
+      output_location: ""
+      skip_app_build: true  # Required for non-npm builds - we use a previous step to build.
+      cwd: '$(System.DefaultWorkingDirectory)/docs'
+      azure_static_web_apps_api_token: $(deployment_token)
+    displayName: "Deploy Html"
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+

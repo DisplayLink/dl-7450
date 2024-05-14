@@ -1,0 +1,27 @@
+{% extends "!layout.html" %}
+{% set css_files = css_files + ["_static/customstyle.css"] %}
+
+{% set master_doc = "index" %}
+
+{% block document %}
+  {% if is_release %}
+    <div class="wy-alert wy-alert-danger">
+      <p>
+        This is the {{ release }} version of the DisplayLink DL-7450 SDK
+        documentation.
+      </p>
+    </div>
+  {% else %}
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				The information contained in this website is Synaptics confidential
+				information, and is made available to you under the terms of our
+				Non-Disclosure Agreement (NDA).  This is a preview version of the
+				DisplayLink DL-7450 Software Development Kit Documentation. The
+				functionality that is described and made available in this version is
+				subject to addition, removal or change without warning.
+      </p>
+    </div>
+  {% endif %}
+  {{ super() }}
+{% endblock %}
