@@ -3,7 +3,7 @@ name: documentation
 on:
   push:
     branches:
-      - 'publish'
+      - 'main'
 
 permissions:
   contents: write
@@ -14,9 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
+        with:
+          python-version: "3.12"
       - name: Install dependencies
         run: |
-          pip install sphinx sphinx_rtd_theme myst_parser
+          pip install --upgrade pip setuptools wheel
+          pip install --upgrade --requirement docs/requirements.txt
       - name: Sphinx build
         run: |
           sphinx-build docs _build
@@ -24,7 +27,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/publish' }}
         with:
-          publish_branch: gh-pages
+          publish_branch: documentation
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/
           force_orphan: true
