@@ -1,0 +1,31 @@
+name: Prepare release pull request
+
+on:
+  push:
+    branches:
+      - documentation/release/*
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip setuptools wheel
+          pip install --upgrade --requirement docs/requirements.txt
+      - name: Sphinx build
+        run: |
+          sphinx-build docs _build
+      - name: Create pull request
+        run: gh pr create --base main --head ${{ github.ref_name }} --fill --label documentation || gh pr edit --add-label documentation
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

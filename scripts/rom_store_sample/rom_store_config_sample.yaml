@@ -1,0 +1,14 @@
+images:
+  default:
+    path: <absolute path to image file>
+    type: png
+  logo:
+    path: <absolute path to image file>
+    type: jpeg
+
+kv_store:
+  "dock_name": <Dock Name>
+  "timezone": "GMT"
+
+code:
+  path: <absolute path to python code file>

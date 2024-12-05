@@ -51,11 +51,6 @@ Methods
 
    Returns one of the constants described below.
 
-.. admonition:: Coming soon
-   :class: tip
-
-   The return value will always be `DockInfo.HOST_NOT_CONNECTED` in this preview.
-
 Constants
 ---------
 

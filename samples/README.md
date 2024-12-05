@@ -18,7 +18,7 @@ for a full guide to the SDK.
 2. [Dock Management](dock_management)
 3. [Task scheduling](timers)
 4. [Interacting with the web](http)
-5. [Internet of Things](internet_of_things) 
+5. [Internet of Things](iot) 
 6. [GPIO](gpio)
 7. [I2C](i2c)
 8. [MQTT](mqtt)
@@ -26,4 +26,6 @@ for a full guide to the SDK.
 Follow the instructions in the scripts folder to send sample code to your DL-7450 and 
 for sending content to the Internet of Things sample apps.
 
-
+NOTE: these samples require application ROM store data to be present. See the
+[helper scripts](scripts/README.md) for details on how to modify and restore
+the dock's application ROM store.

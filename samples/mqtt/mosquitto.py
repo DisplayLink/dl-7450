@@ -55,7 +55,7 @@ class MqttApp:
             self.subscribe_to_topic(f"{self.client_id}/interesting/topic/#", 2)
         else:
             error = ErrorDescription(status)
-            raise Exception(f"Failed to connect to {self.broker} ({status}: {error})")
+            self.text_lower(f"Failed to connect to broker ({status}: {error} - reconnecting)")
 
     def on_message(self, topic: str, message: bytes):
         self.text_lower(f"Received {topic}: {str(message, 'utf-8')}")
