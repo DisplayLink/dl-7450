@@ -1,0 +1,17 @@
+images:
+  default:
+    path: ${CONFIG_PATH}/NavarroBackground1080p.png
+    type: png
+  screen_2:
+    path: ${CONFIG_PATH}/NavarroBackground+LogoProg.png
+    type: png
+  screen_3:
+    path: ${CONFIG_PATH}/NavarroBackgroundBrighton.png
+    type: png
+
+kv_store:
+  "dock_name": "IoT Demo Dock"
+  "timezone": "GMT"
+
+code:
+  path: ${CONFIG_PATH}/app.py

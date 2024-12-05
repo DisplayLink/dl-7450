@@ -45,6 +45,7 @@ html_context = {
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.doctest",
+    "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
     "sphinx.ext.coverage",
@@ -181,3 +182,8 @@ htmlhelp_basename = "DL7450doc"
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {"python": ("https://docs.python.org/3.5", None)}
+
+# External weblinks
+extlinks = {
+    "githubSamples": ('https://github.com/DisplayLink/dl-7450/tree/main/%s', None)
+}

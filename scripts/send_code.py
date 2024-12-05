@@ -8,7 +8,7 @@ import base64
 
 API = "https://sandbox.vision.synaptics.com/api"
 
-def ParseArgs():
+def parse_args():
     parser = argparse.ArgumentParser(
         description="This is a tool to send python code to a Navarro dock",
         epilog="""Example use:
@@ -86,8 +86,8 @@ def send_code(token: str, dock_id: str, code: bytes) -> requests.Response:
     return response
 
 
-def Main():
-    args = ParseArgs()
+def main():
+    args = parse_args()
 
     token = access_token(args.key, args.secret, args.enterprise)
 
@@ -101,5 +101,5 @@ def Main():
     return 0
 
 if __name__ == "__main__":
-    sys.exit(Main())
+    sys.exit(main())
 

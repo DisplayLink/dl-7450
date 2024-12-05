@@ -81,15 +81,47 @@ application through relevant callbacks about MQTT events.
     asynchronously, when the connection is established, or when a connection
     cannot be established for some reason. 
 
-    Example callback function::
+
+    It is important to note that the *on_connect* callback can be called
+    multiple times. In particular if a connection is made successfully, but is
+    later lost, the callback will be invoked twice, the second time as a
+    failure. The MQTT will *automatically attempt to reconnect to the broker*.
+    If this reconnection attempt is successful, yet another invocation of the
+    *on_connect* callback will occur. 
+
+    Example 1: the Client attempts to connect to the server, but does not
+    provide the correct username and password. The *on_connect* callback will
+    be invoked with status = 4. No further connection attempt will be made, and
+    the failure is permanent.
+
+    Example 2: the client connects successfully. The *on_connect* callback is
+    invoked with status = 0. Some time later, the local network is becomes
+    unavailable. On the next failed ping attempt (see the *keepAlive* option),
+    the *on_connect* callback is invoked with status = -1. However, the client
+    will attempt to reconnect to the broker. The first attempt is after 1
+    seconds, then 2, 4, 8, 16 and 32 seconds subsequently, and from then every
+    1 minute. When the network is available again, and the client reconnects,
+    the *on_connect* callback is invoked again with status = 0.
+
+    It is advisable for the application to keep track of the connection status.
+    An example of an *on_connect* callback::
+
+      connected = False
 
       def on_connect(rc, flags):
         if rc == 0:
           # connection accepted by the broker
+          connected = True
         else:
-          errMsg = mqtt.ErrorDescription(rc)
-          # report or handle error.
-
+          if rc > 0:
+            # permanent failure...
+          if rc < 0: 
+            connected = False
+            errMsg = mqtt.ErrorDescription(rc)
+            if connected: 
+              # connection lost. Reconnect attempt follows
+            else:
+              # report or handle error. Reconnect attempt follows
 
     *options* is a dictionary that contains a variety of optional parameters
     for this connection. The possible key-value pairs are described below. All
@@ -147,6 +179,12 @@ application through relevant callbacks about MQTT events.
       
       The *clean_session* option is currently set to 0 and cannot be changed in
       this version of the DL-7450 SDK.
+
+      The client automatically attempts to reconnect to the broker when a
+      connection attempt fails. The minimum time for the retry is 1 second. If
+      this fails, the next retry is 2 seconds, so on through 4, 8, 16 and 32
+      seconds. After that, further attempts occur every minute. This procedure
+      resets once a successful connection is made. 
 
   .. method:: publish(topic, message, qos)
 
