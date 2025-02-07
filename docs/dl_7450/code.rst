@@ -118,7 +118,7 @@ This is the correct form for transmitting the code to the dock via the ``docks\a
 
 Send text message
 -----------------
-You can also send a text message to the dock. The message is displayed on the splashscreen. The message is sent to the ``docks\application\message`` endpoint. The request body should look like this:
+You can also send a text message to the dock. The message is displayed on the splash screen. The message is sent to the ``docks\application\message`` endpoint. The request body should look like this:
 
 .. code-block:: python
 
@@ -149,7 +149,7 @@ The ``scripts/send_text.py`` script can be used to send a text message to the do
 
 Send image
 ----------
-You can also send an image to the dock. The image is displayed on the splashscreen. The image is sent to the ``docks\application\image`` endpoint. The request body should look like this:
+You can also send an image to the dock. The image is displayed on the splash screen. The image is sent to the ``docks\application\image`` endpoint. The request body should look like this:
 
 .. code-block:: python
 

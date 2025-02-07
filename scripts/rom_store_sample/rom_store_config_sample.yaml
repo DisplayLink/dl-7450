@@ -1,9 +1,9 @@
 images:
   default:
-    path: <absolute path to image file>
+    path: <path to image file>
     type: png
   logo:
-    path: <absolute path to image file>
+    path: <path to image file>
     type: jpeg
 
 kv_store:
@@ -11,4 +11,4 @@ kv_store:
   "timezone": "GMT"
 
 code:
-  path: <absolute path to python code file>
+  path: <path to python code file>

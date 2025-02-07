@@ -41,13 +41,13 @@ Use the :ref:`DockControl <dock.DockControl>` class to control dock settings::
 Splashscreen control
 --------------------
 
-Use the `splashscreen` module to control the splashscreen content::
+Use the `splashscreen` module to control the splash screen content::
 
     from splashscreen import Splashscreen, Alignment
     import image
 
-    screen = Splashscreen()                             # create a splashscreen control interface
-    screen.set_background(bg_image, image.PNG)          # set the splashscreen background
+    screen = Splashscreen()                             # create a splash screen control interface
+    screen.set_background(bg_image, image.PNG)          # set the splash screen background
     screen.add_text_box(["Hello, world"])               # create text box in default message position
 
     text_attributes = {                                 # control the position of text

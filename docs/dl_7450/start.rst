@@ -12,5 +12,6 @@ Getting started
    security.rst
    tutorial.rst
    code.rst
+   paradigm.rst
    quickref.rst
 

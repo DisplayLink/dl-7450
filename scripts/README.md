@@ -168,6 +168,9 @@ config](rom_store_sample/rom_store_config_sample.yaml), and a full working
 example which restores the original settings is given in the [restore default
 ROM store script](rom_store_default/config.yaml).
 
+Files can either be specified as absolute paths or, by starting a path with
+`${CONFIG_PATH}`, as relative paths relative to the config.
+
 Please note, the request is schema checked carefully, and if any of the data is
 not in the correct format, the HTTP response code will be 400. Check the
 following:

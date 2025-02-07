@@ -19,9 +19,10 @@ be cancelled. Use cases include:
      seconds. 
    - You may wish to send a report to your cloud service provider every night. 
 
-It is expected that your application main function will do very little work
-except for setting up timers and event handlers. The :py:class:`Timer` support
-this programming paradigm.
+As described in the :ref:`programming paradigm <dl_7450_paradigm>`
+documentation, it is expected that your application main function will do very
+little work except for setting up timers and event handlers. The
+:py:class:`Timer` supports this paradigm.
 
 .. warning::
    If there are no references to a Timer, the Python garbage collector may

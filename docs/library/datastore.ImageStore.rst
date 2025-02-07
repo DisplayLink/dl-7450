@@ -31,5 +31,5 @@ Methods
    Returns an opaque `image.ImageToken` that can be passed to :py:class:`splashscreen.Splashscreen` methods. Unlike the 
    previous method, this call does not result in the copying of the image from flash storage into
    a python bytearray. The token can be passed instead. This may result in faster rendering of the
-   splashscreen background. 
+   splash screen background. 
 
