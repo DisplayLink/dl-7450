@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>http — functions for accessing external web services &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class Response – details of a response to an HTTP request" href="http.Response.html" />
+    <link rel="prev" title="usb — USB Peripheral Management" href="usb.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/start.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API reference guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#python-standard-libraries">Python standard libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#micropython-modules">Micropython modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-foundation-libraries">DL-7450 foundation libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-dock-management-libraries">DL-7450 Dock Management libraries</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#dl-7450-web-libraries">DL-7450 web libraries</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http</span></code> — functions for accessing external web services</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#synchronous-http-requests">Synchronous HTTP requests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#asynchronous-http-requests">Asynchronous HTTP requests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-internet-of-things-libraries">DL-7450 Internet-of-Things libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Python API reference guide</a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http</span></code> — functions for accessing external web services</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/library/http.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="module-http">
+<span id="http-functions-for-accessing-external-web-services"></span><h1><a class="reference internal" href="#module-http" title="http: functions giving DisplayLink DL-7450 web access"><code class="xref py py-mod docutils literal notranslate"><span class="pre">http</span></code></a> — functions for accessing external web services<a class="headerlink" href="#module-http" title="Link to this heading"></a></h1>
+<p>This module contains functions for accessing HTTP endpoints on the web, allowing
+application developers to create a wide variety of features for end users. In
+simple cases the DL-7450 could fetch splash screen content from content provider
+hosted in the cloud or within a corporate network.</p>
+<div class="tip admonition">
+<p class="admonition-title">Coming soon</p>
+<p>In this preview only the GET and POST methods are available. In the first
+release this module will also support PATCH and DELETE requests.</p>
+</div>
+<section id="synchronous-http-requests">
+<h2>Synchronous HTTP requests<a class="headerlink" href="#synchronous-http-requests" title="Link to this heading"></a></h2>
+<p>These functions perform an HTTP request and return the response.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="http.get">
+<span class="sig-prename descclassname"><span class="pre">http.</span></span><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.get" title="Link to this definition"></a></dt>
+<dd><p>Send an HTTP GET request to the given <code class="docutils literal notranslate"><span class="pre">url</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="http.post">
+<span class="sig-prename descclassname"><span class="pre">http.</span></span><span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.post" title="Link to this definition"></a></dt>
+<dd><p>Send an HTTP POST request to the given <code class="docutils literal notranslate"><span class="pre">url</span></code>.</p>
+</dd></dl>
+
+<p id="synchronous-attributes">For all these request functions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>A <a class="reference internal" href="builtins.html#dict" title="dict"><code class="xref any py py-class docutils literal notranslate"><span class="pre">dict</span></code></a> of key-value pairs can be specified for the <code class="docutils literal notranslate"><span class="pre">headers</span></code>. These will
+each be listed as <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">value</span></code> in the HTTP request header.</p></li>
+<li><p>Any <a class="reference internal" href="builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>-like data specified in <code class="docutils literal notranslate"><span class="pre">data</span></code> will constitute the body of the
+request.</p></li>
+<li><p>They all return an <a class="reference internal" href="http.Response.html#http-response"><span class="std std-ref">http.Response</span></a> object populated
+with the result and response of the request.</p></li>
+</ul>
+</div></blockquote>
+<p>Program flow will pause until a response is received from the server, or the
+request fails.</p>
+<p>A maximum of 16 HTTP requests can be made by a running Python app. Attempting to
+create further requests will cause the request to immediately fail with
+<code class="docutils literal notranslate"><span class="pre">status_code</span></code> 89, corresponding to <code class="docutils literal notranslate"><span class="pre">CURLE_NO_CONNECTION_AVAILABLE</span></code>.</p>
+<p>If a request is sent without any data, a <code class="docutils literal notranslate"><span class="pre">Content-Length:</span> <span class="pre">0</span></code> header will
+automatically be included with the request.</p>
+<p>It is up to the user to ensure that all specified arguments are valid. For
+instance, sending a GET request with a body has undefined semantics, but the
+user may still provide <code class="docutils literal notranslate"><span class="pre">data</span></code> for an <a class="reference internal" href="#http.get" title="http.get"><code class="xref any py py-func docutils literal notranslate"><span class="pre">http.get()</span></code></a> call if it suits their
+use case.</p>
+<div class="tip admonition">
+<p class="admonition-title">Coming soon</p>
+<p>The PATCH and DELETE request functions have not yet been implemented. They
+will act in a similar way to the GET and POST requests.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="http.patch">
+<span class="sig-prename descclassname"><span class="pre">http.</span></span><span class="sig-name descname"><span class="pre">patch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.patch" title="Link to this definition"></a></dt>
+<dd><p>Send an HTTP PATCH request to the given <code class="docutils literal notranslate"><span class="pre">url</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="http.delete">
+<span class="sig-prename descclassname"><span class="pre">http.</span></span><span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.delete" title="Link to this definition"></a></dt>
+<dd><p>Send an HTTP DELETE request to the given <code class="docutils literal notranslate"><span class="pre">url</span></code>.</p>
+</dd></dl>
+
+</div>
+</section>
+<section id="asynchronous-http-requests">
+<h2>Asynchronous HTTP requests<a class="headerlink" href="#asynchronous-http-requests" title="Link to this heading"></a></h2>
+<p>These functions perform an HTTP request and return the response.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="http.get_async">
+<span class="sig-prename descclassname"><span class="pre">http.</span></span><span class="sig-name descname"><span class="pre">get_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_complete</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.get_async" title="Link to this definition"></a></dt>
+<dd><p>Send an HTTP GET request to the given <code class="docutils literal notranslate"><span class="pre">url</span></code> without blocking program
+flow.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="http.post_async">
+<span class="sig-prename descclassname"><span class="pre">http.</span></span><span class="sig-name descname"><span class="pre">post_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_complete</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.post_async" title="Link to this definition"></a></dt>
+<dd><p>Send an HTTP POST request to the given <code class="docutils literal notranslate"><span class="pre">url</span></code> without blocking program
+flow.</p>
+</dd></dl>
+
+<p><a class="reference internal" href="#synchronous-attributes"><span class="std std-ref">These functions have all the same attributes as their synchronous counterparts</span></a>, but:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>An additional <code class="docutils literal notranslate"><span class="pre">on_complete</span></code> parameter must be specified. This must be a
+Python callable that takes one parameter.</p></li>
+<li><p>Upon the completion of the request, the <code class="docutils literal notranslate"><span class="pre">on_complete</span></code> function will be
+called, with the <a class="reference internal" href="http.Response.html#http-response"><span class="std std-ref">http.Response</span></a> that would have
+been returned from the corresponding synchronous function as its only
+argument.</p></li>
+<li><p>These functions will return a control object that will allow the user to
+cancel the request, instead of an <a class="reference internal" href="http.Response.html#http-response"><span class="std std-ref">http.Response</span></a>
+object.</p></li>
+</ul>
+</div></blockquote>
+<div class="tip admonition">
+<p class="admonition-title">Coming soon</p>
+<p>Asynchronous versions of PATCH and DELETE are planned:</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="http.patch_async">
+<span class="sig-prename descclassname"><span class="pre">http.</span></span><span class="sig-name descname"><span class="pre">patch_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_complete</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.patch_async" title="Link to this definition"></a></dt>
+<dd><p>Send an HTTP PATCH request to the given <code class="docutils literal notranslate"><span class="pre">url</span></code> without blocking program
+flow.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="http.delete_async">
+<span class="sig-prename descclassname"><span class="pre">http.</span></span><span class="sig-name descname"><span class="pre">delete_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_complete</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#http.delete_async" title="Link to this definition"></a></dt>
+<dd><p>Send an HTTP DELETE request to the given <code class="docutils literal notranslate"><span class="pre">url</span></code> without blocking program
+flow.</p>
+</dd></dl>
+
+</div>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http.Response.html">class Response – details of a response to an HTTP request</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="usb.html" class="btn btn-neutral float-left" title="usb — USB Peripheral Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="http.Response.html" class="btn btn-neutral float-right" title="class Response – details of a response to an HTTP request" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024 Synaptics Inc..
+      <span class="lastupdated">Last updated on 07 Feb 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
