@@ -24,7 +24,7 @@ two possible types:
 
    - *Factory settings* or *Read-only memory (ROM)* storage. Manufacturers can
      provision the DL-7450 with application data in the manufacturing process,
-     such as branded splashscreen backgrounds or the URL of a content provider.
+     such as branded splash screen backgrounds or the URL of a content provider.
      It is also possible to provide unique-per-dock (UPD) data, such as
      enrolment tokens for IoT cloud service providers.
    - *Runtime settings:* Applications may store data that is not set in the
@@ -45,7 +45,7 @@ There is an additional non-persistent storage type:
 
 When an application requests an item from the datastore, unless explicitly
 stated otherwise, there is an order of preference. For example if the
-application requests a splashscreen background with image tag *default_img*,
+application requests a splash screen background with image tag *default_img*,
 first the ephemeral store will be checked, followed by the runtime store and
 finally the ROM/factory store. 
 
@@ -65,7 +65,7 @@ images and key-value data.
    +--------------+----------------------------+
 
 
-.. admonition:: Not-yet implemented
+.. admonition:: Not yet implemented
    :class: tip
 
    In the present version of the DL-7450 SDK only the application ROM store is

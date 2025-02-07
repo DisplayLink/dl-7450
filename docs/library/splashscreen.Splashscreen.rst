@@ -1,10 +1,10 @@
 .. currentmodule:: splashscreen
 .. _splashscreen.Splashscreen:
 
-class Splashscreen -- control the DL-7450 splashscreen
-======================================================
+class Splashscreen -- control the DL-7450 splash screen
+=======================================================
 
-The *Splashscreeen* class enables control of the DL-7450 splashscreen.  
+The *Splashscreeen* class enables control of the DL-7450 splash screen.  
 
 For example::
 
@@ -17,8 +17,8 @@ For example::
     screen = Splashscreen()
     screen.set_background(background)
     screen.add_text_box([
-     "<span size=\"large\">Info: <b>Company Anniversary Celebration</b>",
-     "Today @ 10:00am in the Atrium</span>"
+      "<span size=\"large\">Info: <b>Company Anniversary Celebration</b>",
+      "Today @ 10:00am in the Atrium</span>"
     ])
 
 Constructors
@@ -26,7 +26,7 @@ Constructors
 
 .. class:: Splashscreen()
 
-   Construct an object for controlling the DL-7450 splashscreen.
+   Construct an object for controlling the DL-7450 splash screen.
 
 Methods
 -------
@@ -37,7 +37,7 @@ Methods
 
       - *background* is either a `bytearray` object or an `ImageToken` obtained from `ImageStore.get_token`.
         The latter is an optimisation to delay multiple copying of the image from flash storage until it
-        needed by the splashscreen renderer.
+        needed by the splash screen renderer.
       - *image_type* is a constant defined in the :py:mod:`image` module describing the format of the image.
 
 
@@ -77,4 +77,4 @@ Methods
 
 .. method:: Splashscreen.remove_text_box(x, y)
 
-   Remove a text box that was previously placed on the splashscreen at the given coordinates.
+   Remove a text box that was previously placed on the splash screen at the given coordinates.

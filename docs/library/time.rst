@@ -45,10 +45,9 @@ Functions
 
 .. function:: sleep(seconds)
 
-   Sleep for the given number of *seconds*. Some boards may accept *seconds* as a
-   floating-point number to sleep for a fractional number of seconds. Note that
-   other boards may not accept a floating-point argument, for compatibility with
-   them use `sleep_ms()` and `sleep_us()` functions.
+   Sleep for the given number of *seconds*. *seconds* may be a floating-point
+   number; this will result in the DL-7450 sleeping for a fractional number of
+   seconds.
 
 .. function:: sleep_ms(ms)
 

@@ -7,6 +7,8 @@ A [sample app](mosquitto.py) has been provided that demonstrates connecting to
 the Eclipse Mosquitto test MQTT broker. Information on how to use this broker
 can be found at https://test.mosquitto.org/.
 
+NOTE: The Mosquitto broker is a third party, public test broker. Operation of the sample app relies on this broker being available and functionally compatible with the included version of the sample app.
+
 The provided app connects to the test broker on port 8886, which is encrypted
 using a certificate signed by the Let's Encrypt CA. It then subscribes to a
 topic based on the dock ID of the chip, and periodically sends messages on this

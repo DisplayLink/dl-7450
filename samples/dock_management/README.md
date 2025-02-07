@@ -5,7 +5,7 @@ in real-time. This capability underpins more realistic and valuable use cases fo
 differentiated products. We mention two here.
 
 ## DockEvent class
-This preview does not expose an important management class, the DockEvent interface. This 
+Currently, this preview does not yet expose an important management class, the DockEvent interface. This
 enables application developers to be notified of events, rather than polling for them. Generally,
 triggering event callbacks leads to better user experience that periodically
 polling for changes.
@@ -34,7 +34,7 @@ events.on(HostStatus, on_host_status)
 ```
 
 ## Internet-of-Things device management
-An IoT provider, such as Azure IoT hub can be used for asset tracking and management. An IoT
+An IoT provider, such as Azure IoT hub, can be used for asset tracking and management. An IoT
 application may want to know what peripherals are connected to the dock. For example in a hot-
 desking scenario, a user may want to know if a desk has a 4K monitor, or two monitors. An
 IT manager may want to ensure a desk is ready to use, and has a monitor, mouse and keyboard

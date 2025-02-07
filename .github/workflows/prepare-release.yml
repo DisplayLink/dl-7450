@@ -25,7 +25,9 @@ jobs:
         run: |
           sphinx-build docs _build
       - name: Create pull request
-        run: gh pr create --base main --head ${{ github.ref_name }} --fill --label documentation || gh pr edit --add-label documentation
+        run: |
+          git fetch origin main
+          gh pr create --base main --head ${{ github.ref_name }} --fill --label documentation || gh pr edit --add-label documentation
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

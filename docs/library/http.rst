@@ -8,7 +8,7 @@
 
 This module contains functions for accessing HTTP endpoints on the web, allowing
 application developers to create a wide variety of features for end users. In 
-simple cases the DL-7450 could fetch splashscreen content from content provider
+simple cases the DL-7450 could fetch splash screen content from content provider
 hosted in the cloud or within a corporate network.
 
 .. admonition:: Coming soon

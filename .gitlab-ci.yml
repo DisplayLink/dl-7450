@@ -45,7 +45,7 @@ prepare_release:
     - git remote add github "$GITHUB_URL"
     - git fetch --all
     - git reset --soft github/main
-    - git commit -m "Release for version $new_version"
+    - git commit -m "Documentation version $new_version"
     - git push --verbose --push-option ci.skip gitlab "HEAD:refs/heads/documentation/release/$new_version"  # Skip ci to avoid potential infinite recursion loop on ci builds
     - git push --verbose github "HEAD:refs/heads/documentation/release/$new_version"
   rules:
