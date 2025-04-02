@@ -41,18 +41,6 @@ Methods
       - *image_type* is a constant defined in the :py:mod:`image` module describing the format of the image.
 
 
-.. admonition:: Coming soon
-   :class: tip
-
-   In this preview only `image.PNG` is supported. The data must represent a 
-   1920x1080 image. The background images stored in the factory data store for
-   the workshop are in the correct format, as are those that are retreived from
-   the network for the carousel sample. In the first release of the SDK these 
-   restrictions will be removed and other formats such as BMP or JPG will be 
-   allowed. The SDK will also allow different sized background images to be used
-   and either centred or scaled on the screen. The interface will also allow different
-   screen resolutions to be set.
-
 
 .. method:: Splashscreen.add_text_box(text, attributes)
 

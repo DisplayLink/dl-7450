@@ -1,0 +1,7 @@
+images:
+  default:
+    path: ${CONFIG_PATH}/NavarroBackground1080p.png
+    type: png
+
+code:
+  path: ${CONFIG_PATH}/app.py

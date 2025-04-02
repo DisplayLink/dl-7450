@@ -11,12 +11,6 @@ application developers to create a wide variety of features for end users. In
 simple cases the DL-7450 could fetch splash screen content from content provider
 hosted in the cloud or within a corporate network.
 
-.. admonition:: Coming soon
-   :class: tip
-
-   In this preview only the GET and POST methods are available. In the first
-   release this module will also support PATCH and DELETE requests.
-
 
 Synchronous HTTP requests
 -------------------------
@@ -59,21 +53,6 @@ user may still provide ``data`` for an `http.get()` call if it suits their
 use case.
 
 
-.. admonition:: Coming soon
-   :class: tip
-
-   The PATCH and DELETE request functions have not yet been implemented. They
-   will act in a similar way to the GET and POST requests.
-
-   .. function:: patch(url, headers=None, data=None)
-
-      Send an HTTP PATCH request to the given ``url``.
-
-   .. function:: delete(url, headers=None, data=None)
-
-      Send an HTTP DELETE request to the given ``url``.
-
-
 Asynchronous HTTP requests
 --------------------------
 
@@ -101,22 +80,6 @@ These functions perform an HTTP request and return the response.
  * These functions will return a control object that will allow the user to
    cancel the request, instead of an :ref:`http.Response <http.Response>`
    object.
-
-
-.. admonition:: Coming soon
-   :class: tip
-
-   Asynchronous versions of PATCH and DELETE are planned:
-
-   .. function:: patch_async(url, on_complete, headers=None, data=None)
-
-      Send an HTTP PATCH request to the given ``url`` without blocking program
-      flow.
-
-   .. function:: delete_async(url, on_complete, headers=None, data=None)
-
-      Send an HTTP DELETE request to the given ``url`` without blocking program
-      flow.
 
 
 Classes
