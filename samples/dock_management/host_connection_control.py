@@ -8,7 +8,7 @@ splashscreen = Splashscreen()
 
 
 class HostConnection:
-    host_status = dock_info.host_status()
+    host_status = None
     timer = None
 
     def __init__(self):
@@ -39,7 +39,7 @@ class HostConnection:
 
             if self.host_status == dock_info.HOST_CONNECTED:
                 # If we have just connected a dock, suspend the connection.
-                if previous_status == dock_info.HOST_NOT_CONNECTED:
+                if previous_status in [None, dock_info.HOST_NOT_CONNECTED]:
                     self.revoke_access()
                 else:
                     self.display_connection_status()
@@ -54,4 +54,4 @@ class HostConnection:
 
 
 host_connection = HostConnection()
-gc_prevention = wakeup(host_connection.revoke_access_on_connection, 500, 500)
+timer = wakeup(host_connection.revoke_access_on_connection, 0, 500)

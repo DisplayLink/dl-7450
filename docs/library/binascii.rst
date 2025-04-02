@@ -7,10 +7,10 @@
 This module implements conversions between binary data and various
 encodings of it in ASCII form (in both directions).
 
-.. admonition:: Coming soon
+.. admonition:: Note
    :class: attention
 
-   This is a very limited implementation of :py:mod:`binascii` compared to the standard CPython
+   This is a limited implementation of :py:mod:`binascii` from the standard CPython
    implementation.
 
 

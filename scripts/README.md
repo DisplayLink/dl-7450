@@ -121,7 +121,7 @@ board - see below.
 A helper script, [send_rom_store.py], is provided. 
 
 ```bash
-python3 send_rom_store -k <APPLICATION-KEY> -s <APPLICATION-SECRET> -e <ENTERPRISE-ID> -d <DOCK-ID> -c <ROM_STORE_CONFIG_FILE> 
+python3 send_rom_store.py -k <APPLICATION-KEY> -s <APPLICATION-SECRET> -e <ENTERPRISE-ID> -d <DOCK-ID> -c <ROM_STORE_CONFIG_FILE> 
 ```
 The application key and secret and the enterprise ID are the same as described
 above in the section on sending code, and are used in the same way to obtain an

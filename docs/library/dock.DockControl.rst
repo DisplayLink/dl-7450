@@ -10,15 +10,7 @@ The DockControl class provides DL-7450 management services to applications.
 
    Construct a DockControl object.
 
-   .. admonition:: Coming soon
-      :class: tip
 
-      In later releases, the DockControl interface will give the application developer
-      more control of the dock including:
-
-         - set the attached screens to different resolutions.
-         - show different content on different attached monitors.
-         - set WiFi credentials such as SSID and password.
 
    .. method:: DockControl.suspend_host_connection(suspend: bool) -> None
 
@@ -64,10 +56,10 @@ The DockControl class provides DL-7450 management services to applications.
       If an attempt is made to set a timezone that does not exist a `ValueError` exception is raised.
       For an invalid type a `TypeError` is raised.
 
-   .. admonition:: Coming soon
+   .. admonition:: Note
       :class: tip
 
-      In this preview a limited subset of the IANA timezones are supported.
+      The following subset of the IANA timezones are supported.
 
       +----------------------+-----------------------------------------------------+
       | Zone Code            | Notes                                               |

@@ -27,7 +27,7 @@ In addition, you will be provided with a dock identifier, that looks like
 
 Send code
 ---------
-With these four pieces of information, the ``samples/send_code.py`` script can be used for deploying code to the board:
+With these four pieces of information, the :githubSamples:`send_code.py <scripts/send_code.py>` script can be used for deploying code to the board:
 
 .. code-block:: bash
 
@@ -87,9 +87,9 @@ The Access Token must be provided as an *Authorization* header in calls to deplo
 Authorization: Bearer <ACCESS-TOKEN>
 ```
 
-See ``scripts/send_code.py`` for an example using the Python requests module.
+See :githubSamples:`send_code.py <scripts/send_code.py>` for an example using the Python requests module.
 
-In order to send a Python application, it must be Base64 encoded. In ``scripts/send_code.py``, the application code is read from a file as a byte string and then Base64 encoded, like this:
+In order to send a Python application, it must be Base64 encoded. In :githubSamples:`send_code.py <scripts/send_code.py>`, the application code is read from a file as a byte string and then Base64 encoded, like this:
 
 .. code-block:: python
 
@@ -135,7 +135,7 @@ You can also send a text message to the dock. The message is displayed on the sp
 .. warning::
    Please make sure that the sent message starts with ``t``. Otherwise, the message will not be consumed by the started application on the dock.
 
-The ``scripts/send_text.py`` script can be used to send a text message to the dock:
+The :githubSamples:`send_text.py <scripts/send_text.py>` script can be used to send a text message to the dock:
 
 .. code-block:: bash
 
@@ -166,7 +166,7 @@ You can also send an image to the dock. The image is displayed on the splash scr
 .. warning::
    Please make sure that the raw image data starts with ``i``. Otherwise, the image will not be consumed by the started application on the dock.
 
-The ``scripts/send_image.py`` script can be used to send an image to the dock:
+The :githubSamples:`send_image.py <scripts/send_image.py>` script can be used to send an image to the dock:
 
 .. code-block:: bash
 
