@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>class datetime – Information about a date and time &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class time – Idealised time" href="datetime.time.html" />
+    <link rel="prev" title="class date – Represent a date" href="datetime.date.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/start.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API reference guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#python-standard-libraries">Python standard libraries</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="binascii.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">binascii</span></code> – binary/ASCII conversions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="builtins.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">builtins</span></code> – builtin functions and exceptions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="datetime.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code> – time manipulation functionality</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="datetime.html#constants">Constants</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="datetime.html#classes">Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="hashlib.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code> – hashing algorithms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hmac.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hmac</span></code> – hashing algorithms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">io</span></code> – input/output streams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code> – JSON encoding and decoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="time.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code> – time related functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#micropython-modules">Micropython modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-foundation-libraries">DL-7450 foundation libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-dock-management-libraries">DL-7450 Dock Management libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-web-libraries">DL-7450 web libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-internet-of-things-libraries">DL-7450 Internet-of-Things libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-testing-libraries">DL-7450 testing libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Python API reference guide</a></li>
+          <li class="breadcrumb-item"><a href="datetime.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code> – time manipulation functionality</a></li>
+      <li class="breadcrumb-item active">class datetime – Information about a date and time</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/library/datetime.datetime.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="class-datetime-information-about-a-date-and-time">
+<span id="datetime-datetime"></span><h1>class datetime – Information about a date and time<a class="headerlink" href="#class-datetime-information-about-a-date-and-time" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="datetime.datetime">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microsecond</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tzinfo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime" title="Link to this definition"></a></dt>
+<dd><p>A datetime object is a single object containing all the information from a
+<a class="reference internal" href="datetime.date.html#datetime.date" title="datetime.date"><code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code></a> object and a <a class="reference internal" href="datetime.time.html#datetime.time" title="datetime.time"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code></a> object.</p>
+<p>Other constructors:</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.fromisoformat">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fromisoformat</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.fromisoformat" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.fromordinal">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fromordinal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.fromordinal" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.fromtimestamp">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fromtimestamp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.fromtimestamp" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.now">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">now</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.now" title="Link to this definition"></a></dt>
+<dd><p>NOT IMPLEMENTED</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.combine">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">combine</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.combine" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.strptime">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">strptime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.strptime" title="Link to this definition"></a></dt>
+<dd><p><em>NOT IMPLEMENTED</em></p>
+</dd></dl>
+
+<p>Class attributes:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.datetime.EPOCH">
+<span class="sig-name descname"><span class="pre">EPOCH</span></span><a class="headerlink" href="#datetime.datetime.EPOCH" title="Link to this definition"></a></dt>
+<dd><p>A <a class="reference internal" href="#datetime.datetime" title="datetime.datetime"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> object representing the epoch.</p>
+</dd></dl>
+
+<p>Instance attributes:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.datetime.year">
+<span class="sig-name descname"><span class="pre">year</span></span><a class="headerlink" href="#datetime.datetime.year" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.datetime.month">
+<span class="sig-name descname"><span class="pre">month</span></span><a class="headerlink" href="#datetime.datetime.month" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.datetime.day">
+<span class="sig-name descname"><span class="pre">day</span></span><a class="headerlink" href="#datetime.datetime.day" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.datetime.hour">
+<span class="sig-name descname"><span class="pre">hour</span></span><a class="headerlink" href="#datetime.datetime.hour" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.datetime.minute">
+<span class="sig-name descname"><span class="pre">minute</span></span><a class="headerlink" href="#datetime.datetime.minute" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.datetime.second">
+<span class="sig-name descname"><span class="pre">second</span></span><a class="headerlink" href="#datetime.datetime.second" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.datetime.microsecond">
+<span class="sig-name descname"><span class="pre">microsecond</span></span><a class="headerlink" href="#datetime.datetime.microsecond" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.datetime.tzinfo">
+<span class="sig-name descname"><span class="pre">tzinfo</span></span><a class="headerlink" href="#datetime.datetime.tzinfo" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.datetime.fold">
+<span class="sig-name descname"><span class="pre">fold</span></span><a class="headerlink" href="#datetime.datetime.fold" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Instance methods:</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.replace">
+<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.replace" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.tuple">
+<span class="sig-name descname"><span class="pre">tuple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.tuple" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.time">
+<span class="sig-name descname"><span class="pre">time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.time" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.astimezone">
+<span class="sig-name descname"><span class="pre">astimezone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.astimezone" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.date">
+<span class="sig-name descname"><span class="pre">date</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.dst">
+<span class="sig-name descname"><span class="pre">dst</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.dst" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.isoformat">
+<span class="sig-name descname"><span class="pre">isoformat</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.isoformat" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.isoweekday">
+<span class="sig-name descname"><span class="pre">isoweekday</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.isoweekday" title="Link to this definition"></a></dt>
+<dd><p>Return the day of the week as an integer, where Monday is 1 and Sunday is 7.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.weekday">
+<span class="sig-name descname"><span class="pre">weekday</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.weekday" title="Link to this definition"></a></dt>
+<dd><p>Return the day of the week as an integer, where Monday is 0 and Sunday is 6.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.timetuple">
+<span class="sig-name descname"><span class="pre">timetuple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.timetuple" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.timetz">
+<span class="sig-name descname"><span class="pre">timetz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.timetz" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.toordinal">
+<span class="sig-name descname"><span class="pre">toordinal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.toordinal" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.tzname">
+<span class="sig-name descname"><span class="pre">tzname</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.tzname" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.datetime.utcoffset">
+<span class="sig-name descname"><span class="pre">utcoffset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.datetime.utcoffset" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datetime.date.html" class="btn btn-neutral float-left" title="class date – Represent a date" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datetime.time.html" class="btn btn-neutral float-right" title="class time – Idealised time" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024 Synaptics Inc..
+      <span class="lastupdated">Last updated on 17 Apr 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

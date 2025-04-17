@@ -1,0 +1,215 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>class IperfClient – run iperf3 tests as client &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Optimization for Micropython" href="../dl_7450/optimization.html" />
+    <link rel="prev" title="iperf — iperf3 network performance testing" href="iperf.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/start.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API reference guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#python-standard-libraries">Python standard libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#micropython-modules">Micropython modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-foundation-libraries">DL-7450 foundation libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-dock-management-libraries">DL-7450 Dock Management libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-web-libraries">DL-7450 web libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-internet-of-things-libraries">DL-7450 Internet-of-Things libraries</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#dl-7450-testing-libraries">DL-7450 testing libraries</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="iperf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iperf</span></code> — iperf3 network performance testing</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="iperf.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Python API reference guide</a></li>
+          <li class="breadcrumb-item"><a href="iperf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iperf</span></code> — iperf3 network performance testing</a></li>
+      <li class="breadcrumb-item active">class IperfClient – run iperf3 tests as client</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/library/iperf.IperfClient.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="class-iperfclient-run-iperf3-tests-as-client">
+<span id="iperf-iperfclient"></span><h1>class IperfClient – run iperf3 tests as client<a class="headerlink" href="#class-iperfclient-run-iperf3-tests-as-client" title="Link to this heading"></a></h1>
+<p>The <a class="reference internal" href="#iperf.IperfClient" title="iperf.IperfClient"><code class="xref any py py-class docutils literal notranslate"><span class="pre">IperfClient</span></code></a> class enables the DL-7450 to become an iperf3 client.
+The <a class="reference internal" href="#iperf.IperfClient.run" title="iperf.IperfClient.run"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">IperfClient.run</span></code></a> method is implemented asynchronously, i.e.
+the call returns control to the application quickly, and informs the
+application of the iperf3 test results through a callback.</p>
+<p>In order to fully utilise this test, an iperf3 server must be set up on another
+machine. After installing or otherwise obtaining a copy of iperf3 on the other
+machine, run the iperf3 server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iperf3</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">port</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>This server can now be connected to with the <a class="reference internal" href="#iperf.IperfClient" title="iperf.IperfClient"><code class="xref any py py-class docutils literal notranslate"><span class="pre">IperfClient</span></code></a>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="iperf.IperfClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">iperf.</span></span><span class="sig-name descname"><span class="pre">IperfClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hostname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="builtins.html#str" title="str"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="builtins.html#int" title="int"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#iperf.IperfClient" title="Link to this definition"></a></dt>
+<dd><p>Create an iperf3 client class that connects to the given hostname at the given
+port. The client is created in a ready-to-connect state and the actual
+connection is initiated in the <a class="reference internal" href="#iperf.IperfClient.run" title="iperf.IperfClient.run"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">IperfClient.run</span></code></a> call.</p>
+<p>The arguments to this constructor are:</p>
+<ul class="simple">
+<li><p><em>hostname</em> is the address of the iperf3 server. The hostname can be either an
+IP address or a traditional host name.</p></li>
+<li><p><em>port</em> is the port number that the iperf3 server is running on.</p></li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="iperf.IperfClient.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on_complete</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="builtins.html#dict" title="dict"><span class="pre">dict</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.5/library/constants.html#None" title="(in Python v3.5)"><span class="pre">None</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#iperf.IperfClient.run" title="Link to this definition"></a></dt>
+<dd><p>This method initiates a connection to the iperf3 server and runs an iperf
+test asynchronously.</p>
+<p>The <em>on_complete</em> argument is any callable entity which takes a
+dictionary <em>result</em> as an argument. Upon completion of the iperf3 test,
+the <em>on_complete</em> callback is called, with the JSON output parsed and
+passed in as the <em>result</em> argument.</p>
+<p>For an example of what output can be expected, see the output of a
+standard iperf3 call:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iperf3</span> <span class="o">-</span><span class="n">c</span> <span class="o">&lt;</span><span class="n">hostname</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">port</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">t</span> <span class="mi">10</span> <span class="o">--</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>and inspect the avaiable JSON fields.</p>
+<p>Just as with the standard iperf3 client, the <a class="reference internal" href="#iperf.IperfClient.run" title="iperf.IperfClient.run"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">IperfClient.run</span></code></a> method will
+still return failures in JSON format, but with the <code class="docutils literal notranslate"><span class="pre">error</span></code> field set.</p>
+<p>In the event of a non-iperf error, or if iperf cannot generate any JSON
+output, the <a class="reference internal" href="#iperf.IperfClient.run" title="iperf.IperfClient.run"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">IperfClient.run</span></code></a> method will return an empty dictionary.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="iperf.html" class="btn btn-neutral float-left" title="iperf — iperf3 network performance testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../dl_7450/optimization.html" class="btn btn-neutral float-right" title="Optimization for Micropython" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024 Synaptics Inc..
+      <span class="lastupdated">Last updated on 17 Apr 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
