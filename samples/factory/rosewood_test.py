@@ -1,5 +1,6 @@
 from datastore import CodeStore, ImageStore, KvStore
 from dock import DockControl
+from iperf import IperfClient
 from splashscreen import Splashscreen
 from wakeup import wakeup
 
@@ -7,131 +8,217 @@ from wakeup import wakeup
 splashscreen = Splashscreen()
 
 
+# Test infrastructure
+
+
 class Result:
-    aborted = """<span color="red" weight="bold">Aborted</span>"""
-    failure = """<span color="red" weight="bold">Failed</span>"""
-    success = """<span color="green" weight="bold">Success</span>"""
-    started = """<span color="orange" weight="bold">Started</span>"""
+    @staticmethod
+    def _make_span(color, text, extra=None):
+        if extra:
+            text = f"{text} ({extra})"
+        return f'<span color="{color}" weight="bold">{text}</span>'
+
+    @classmethod
+    def aborted(cls, extra=None):
+        return cls._make_span("red", "Aborted", extra=extra)
+
+    @classmethod
+    def failure(cls, extra=None):
+        return cls._make_span("red", "Failed", extra=extra)
+
+    @classmethod
+    def success(cls, extra=None):
+        return cls._make_span("green", "Success", extra=extra)
+
+    @classmethod
+    def started(cls, extra=None):
+        return cls._make_span("orange", "Started", extra=extra)
 
 
-class Test:
+class TestDisplay:
     total_tests = 0
 
     def __init__(self, name):
         self.id = self.total_tests
         self.name = name
-        Test.total_tests += 1
+        type(self).total_tests += 1
         self.start()
 
-    def aborted(self):
+    def aborted(self, extra=None):
         splashscreen.add_text_box(
-            f"{self.name}: {Result.started}",
+            f"{self.name}: {Result.aborted(extra=extra)}",
             {"x": 960, "y": 480 + (60 * self.id)},
         )
 
-    def start(self):
+    def start(self, extra=None):
         splashscreen.add_text_box(
-            f"{self.name}: {Result.started}",
+            f"{self.name}: {Result.started(extra=extra)}",
             {"x": 960, "y": 480 + (60 * self.id)},
         )
 
-    def success(self):
+    def success(self, extra=None):
         splashscreen.add_text_box(
-            f"{self.name}: {Result.success}",
+            f"{self.name}: {Result.success(extra=extra)}",
             {"x": 960, "y": 480 + (60 * self.id)},
         )
 
-    def failure(self):
+    def failure(self, extra=None):
         splashscreen.add_text_box(
-            f"{self.name}: {Result.failure}",
+            f"{self.name}: {Result.failure(extra=extra)}",
             {"x": 960, "y": 480 + (60 * self.id)},
         )
 
 
-# Verbose testing of the ROM store, likely largely unnecessary - a subset should be sufficient to verify things have flashed correctly.
-class TestFactorySettings:
+class TestCase:
+    def __init__(self, test_name: str, suite):
+        self.name = test_name
+        self.suite = suite
+        self.display = TestDisplay(test_name)
+        self.display.start()
+        self.timer = wakeup(self.run, 0)
+
+    def run(self):
+        raise NotImplementedError()
+
+    def success(self, extra=None):
+        self.display.success(extra=extra)
+        self.suite.check_complete(self.name)
+
+    def fail(self, extra=None):
+        self.display.failure(extra=extra)
+        self.suite.abort()
+
+
+class TestSuite:
     def __init__(self, on_fail, on_pass):
-        self.key_store = KvStore()
-        self.image_store = ImageStore()
+        self.test_cases = []
         self.completed_checks = []
         self.on_pass = on_pass
         self.on_fail = on_fail
         self.test()
 
+    def register_test(self, test_class: type, test_name: str):
+        test_case = test_class(test_name, self)
+        self.test_cases.append(test_case)
+
     def test(self):
-        self.image_test = Test("Images")
-        self.key_test = Test("Key Values")
-        self.code_test = Test("Factory App")
-        self.image_timer = wakeup(self.test_images, 0)
-        self.key_timer = wakeup(self.test_key_values, 0)
-        self.code_timer = wakeup(self.test_factory_app, 0)
+        raise NotImplementedError()
+
+    def abort(self):
+        for case in self.test_cases:
+            case.timer.cancel()
+        self.on_fail("", "")
+
+    def check_complete(self, check):
+        self.completed_checks.append(check)
+        if len(self.completed_checks) == len(self.test_cases):
+            self.on_pass("")
+
+
+# Tests
+
+
+class TestImages(TestCase):
+    EXPECTED_IMAGES = ["default"]
 
     def show_next_image(self):
         if not self.images:
-            self.image_timer.cancel()
+            self.timer.cancel()
             # self.on_pass(self.scenario)
-            self.image_test.success()
-            self.check_complete("images")
+            self.success()
         else:
             image = self.images.pop()
             token = self.image_store.get_token(image)
             splashscreen.set_background(token)
 
-    def test_images(self):
-        self.images = self.image_store.list()
-        expected_images = ["default"]
-        if self.images != expected_images:
-            self.image_timer = wakeup(self.show_next_image, 0, 2000)
+    def run(self):
+        image_store = ImageStore()
+        self.images = image_store.list()
+        if self.images != self.EXPECTED_IMAGES:
+            self.timer = wakeup(self.show_next_image, 0, 2000)
         else:
-            self.image_test.failure()
-            self.abort()
+            self.fail()
 
-    def test_key_values(self):
-        self.keys = self.key_store.list()
-        if self.keys != []:
-            self.key_test.failure()
-            self.abort()
+
+class TestKeyValues(TestCase):
+    EXPECTED_KEY_STORE = []
+
+    def run(self):
+        key_store = KvStore()
+        keys = key_store.list()
+        if keys != self.EXPECTED_KEY_STORE:
+            self.fail()
         else:
-            self.key_test.success()
-            self.check_complete("key_values")
+            self.success()
 
-    def test_factory_app(self):
-        self.code_store = CodeStore()
-        checksum = self.code_store.info()["checksum"]
-        if checksum != 2340183109:
-            self.code_test.failure()
-            self.abort()
+
+class TestFactoryApp(TestCase):
+    EXPECTED_FACTORY_CHECKSUM = 2340183109
+
+    def run(self):
+        code_store = CodeStore()
+        checksum = code_store.info()["checksum"]
+        if checksum != self.EXPECTED_FACTORY_CHECKSUM:
+            self.fail()
         else:
-            self.code_test.success()
-            self.check_complete("factory_app")
+            self.success()
 
-    def abort(self):
-        self.image_timer.cancel()
-        self.key_timer.cancel()
-        self.code_timer.cancel()
-        self.on_fail("", "")
 
-    def check_complete(self, check):
-        self.completed_checks.append(check)
-        if len(self.completed_checks) == 3:
-            self.on_pass("")
+# Verbose testing of the ROM store, likely largely unnecessary - a subset should be sufficient to verify things have flashed correctly.
+class TestFactorySettings(TestSuite):
+    def test(self):
+        self.register_test(TestImages, "Images")
+        self.register_test(TestKeyValues, "Key Values")
+        self.register_test(TestFactoryApp, "Factory App")
+
+
+class TestIperf(TestCase):
+    BITRATE_THRESHOLD_MB = 50
+
+    def _iperf_complete(self, result):
+        if not result.get("intervals", False):
+            self.fail()
+        else:
+            bitrates = [interval["sum"]["bits_per_second"] for interval in result["intervals"]]
+            bitrates_mb = [b / 1000**2 for b in bitrates]
+            average_bitrate_mb = sum(bitrates_mb) / len(bitrates_mb)
+            average_bitrate_text = f"Average: {average_bitrate_mb:.2f} Mbps"
+            if average_bitrate_mb < self.BITRATE_THRESHOLD_MB:
+                self.fail(extra=average_bitrate_text)
+            else:
+                self.success(extra=average_bitrate_text)
+
+    def run(self):
+        self.iperf_client = IperfClient(self.suite.SERVER_HOSTNAME, self.suite.SERVER_PORT)
+        self.iperf_client.run(on_complete=self._iperf_complete)
+
+
+class TestBandwidth(TestSuite):
+    SERVER_HOSTNAME = "iperf-server"
+    SERVER_PORT = 5000
+
+    def test(self):
+        self.register_test(TestIperf, "Iperf")
 
 
 class TestRosewood:
     def __init__(self):
         self.dock_control = DockControl()
-        self.tests = [TestFactorySettings]
+        self.tests = [
+            TestFactorySettings,
+            TestBandwidth,
+        ]
 
     def next_test(self):
         if self.tests:
-            test_class = self.tests.pop()
+            test_class = self.tests.pop(0)
             test = test_class(self.fail, self.passed)
         else:
             self.exit_test_mode(True)
 
     def fail(self, scenario, reason):
         splashscreen.add_text_box(
-            f"Overall: {Result.failure}",
+            f"Overall: {Result.failure()}",
             {"x": 960, "y": 800},
         )
         self.exit_test_mode(False)
@@ -144,7 +231,7 @@ class TestRosewood:
     def exit_test_mode(self, passed):
         if passed:
             splashscreen.add_text_box(
-                f"Final result: {Result.success}",
+                f"Final result: {Result.success()}",
                 {"x": 960, "y": 800},
             )
             # self.dock_control.set_test_mode(False)
