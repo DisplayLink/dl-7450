@@ -16,6 +16,18 @@ encodings of it in ASCII form (in both directions).
 
 Functions
 ---------
+.. function:: hexlify(data, [sep])
+
+   Convert the bytes in the *data* object to a hexadecimal representation.
+   Returns a bytes object.
+
+   If the additional argument *sep* is supplied it is used as a separator
+   between hexadecimal values.
+
+.. function:: unhexlify(data)
+
+   Convert hexadecimal data to binary representation. Returns bytes string.
+   (i.e. inverse of hexlify)
 
 .. function:: a2b_base64(data)
 

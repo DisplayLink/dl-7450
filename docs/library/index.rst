@@ -27,6 +27,9 @@ they may be cut-down versions.
 
    binascii.rst
    builtins.rst
+   datetime.rst
+   hashlib.rst
+   hmac.rst
    io.rst
    json.rst
    time.rst
@@ -95,7 +98,7 @@ with REST APIs.
 
 .. _dl7450_iot:
 
-DL-7450 Internet-of-Things libraries 
+DL-7450 Internet-of-Things libraries
 ------------------------------------
 
 The following libraries enable the DL-7450 to be purposed as an
@@ -106,3 +109,16 @@ Internet-of-Things device.
 
   mqtt.rst
   vision_client.rst
+
+
+.. _dl7450_test:
+
+DL-7450 testing libraries
+------------------------------------
+
+The following libraries enable testing of the capabilities of the DL-7450.
+
+.. toctree::
+  :maxdepth: 1
+
+  iperf.rst
