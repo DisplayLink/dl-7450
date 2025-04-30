@@ -13,8 +13,9 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import sys
 import os
+import sys
+from datetime import datetime
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -66,7 +67,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "DisplayLink DL-7450 SDK"
-copyright = "- The DisplayLink DL-7450 SDK Documentation is Copyright © 2024 Synaptics Inc."
+copyright = f"- The DisplayLink DL-7450 SDK Documentation is Copyright © 2024-{datetime.now().year} Synaptics Inc."
 version = release = dl7450_version
 
 exclude_patterns = ["build", ".venv", "venv"]
@@ -179,9 +180,6 @@ html_additional_pages = {"index": "topindex.html"}
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = "DL7450doc"
-
-# Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {"python": ("https://docs.python.org/3.5", None)}
 
 # External weblinks
 extlinks = {

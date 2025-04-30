@@ -1,3 +1,6 @@
+# This code is part of the DisplayLink DL-7450 Software Development Kit
+# Copyright (c) DisplayLink UK 2025
+
 from datastore import CodeStore, ImageStore, KvStore
 from dock import DockControl
 from iperf import IperfClient

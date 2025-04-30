@@ -75,7 +75,7 @@ The following methods draw shapes onto the FrameBuffer.
 
     Draw a rectangle at the given location, size and color.
 
-    The optional *f* parameter can be set to ``True`` to fill the rectangle.
+    The optional *f* parameter can be set to `True` to fill the rectangle.
     Otherwise just a one pixel outline is drawn.
 
 .. method:: FrameBuffer.ellipse(x, y, xr, yr, c[, f, m])
@@ -84,7 +84,7 @@ The following methods draw shapes onto the FrameBuffer.
     geometry; equal values cause a circle to be drawn. The *c* parameter
     defines the color.
 
-    The optional *f* parameter can be set to ``True`` to fill the ellipse.
+    The optional *f* parameter can be set to `True` to fill the ellipse.
     Otherwise just a one pixel outline is drawn.
 
     The optional *m* parameter enables drawing to be restricted to certain
@@ -100,7 +100,7 @@ The following methods draw shapes onto the FrameBuffer.
     The *coords* must be specified as a :mod:`array` of integers, e.g.
     ``array('h', [x0, y0, x1, y1, ... xn, yn])``.
 
-    The optional *f* parameter can be set to ``True`` to fill the polygon.
+    The optional *f* parameter can be set to `True` to fill the polygon.
     Otherwise just a one pixel outline is drawn.
 
 Drawing text
