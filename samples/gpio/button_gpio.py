@@ -1,5 +1,5 @@
 # This code is part of the DisplayLink DL-7450 Software Development Kit
-# Copyright (c) DisplayLink UK 2024
+# Copyright (c) DisplayLink UK 2024-2025
 
 from splashscreen import Splashscreen
 import gpio

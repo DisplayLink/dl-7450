@@ -24,10 +24,6 @@ timers are scheduled to fire simultaneously. This means that instantiation
 order and timer lengths cannot be used to "ensure" certain timers fire before
 certain others.
 
-
-Constructors
-------------
-
 .. class:: Timer(task, time_ms, repeat_ms = 0)
 
    Schedule a task to be carried out later. The parameters are:

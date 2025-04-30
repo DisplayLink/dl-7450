@@ -1,5 +1,5 @@
 # This code is part of the DisplayLink DL-7450 Software Development Kit
-# Copyright (c) 2024 DisplayLink (UK) Ltd.
+# Copyright (c) 2024-2025 DisplayLink (UK) Ltd.
 
 from datastore import ImageStore
 from vision_client import VisionClient

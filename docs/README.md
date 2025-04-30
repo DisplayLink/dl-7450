@@ -4,7 +4,7 @@ DL-7450 SDK Documentation
 Building the documentation locally
 ----------------------------------
 
-If you're making changes to the documentation, you may want to build the
+If you are making changes to the documentation, you may want to build the
 documentation locally so that you can preview your changes.
 
 Install Sphinx, and optionally (for the RTD-styling), sphinx_rtd_theme.

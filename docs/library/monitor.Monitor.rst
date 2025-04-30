@@ -51,7 +51,7 @@ Methods
 
 .. method:: Monitor.valid()
 
-   Check whether the EDID of this monitor is valid. If ``False``, all other methods of this class
+   Check whether the EDID of this monitor is valid. If `False`, all other methods of this class
    will return empty data.
 
 

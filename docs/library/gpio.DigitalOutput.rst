@@ -45,8 +45,8 @@ Methods
 .. method:: DigitalOutput.active_high()
 
 
-   Returns a boolean that is *True* if the pin is configured to be active in
-   the high state, or *False* if the pin is configured to be active in the low
+   Returns a boolean that is `True` if the pin is configured to be active in
+   the high state, or `False` if the pin is configured to be active in the low
    state.
 
    For example::
