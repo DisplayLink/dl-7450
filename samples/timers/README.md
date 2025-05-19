@@ -75,13 +75,11 @@ of the standard time module can be used. It also shows that the *DockControl* in
    ``` python
    dockControl.set_timezone("GMT")
    ```
-   
+
    reload the application and observe the timezone change. NB, the timezone
    is now set until another call changes it again, including when another
    application is loaded. In practice, an application should not assume the
    timezone, but should set it.
- 
- * Try the different 
 
  * While a one-second frequency clock is useful to demonstrate the timer
    functionality, in practice a clock that updates on the minute is more
