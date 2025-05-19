@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>network — functions for controlling network interface &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class LAN – control an Ethernet interface" href="network.LAN.html" />
+    <link rel="prev" title="class Monitor – information about connected monitors" href="monitor.Monitor.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/start.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API reference guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#python-standard-libraries">Python standard libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#micropython-modules">Micropython modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-foundation-libraries">DL-7450 foundation libraries</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#dl-7450-dock-management-libraries">DL-7450 Dock Management libraries</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="datastore.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datastore</span></code> — Data persistence services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dock.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dock</span></code> — Dock Management Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="monitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">monitor</span></code> — functions for obtaining details of connected monitors</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">network</span></code> — functions for controlling network interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#classes">Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="image.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">image</span></code> — representation of image types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gpio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gpio</span></code> — General-Purpose Input/Output Pin Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="i2c.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">i2c</span></code> — I<sup>2</sup>C Device Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="splashscreen.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">splashscreen</span></code> — functions for controlling the DL-7450 splash screen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usb.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usb</span></code> — USB Peripheral Management</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-web-libraries">DL-7450 web libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-internet-of-things-libraries">DL-7450 Internet-of-Things libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Python API reference guide</a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">network</span></code> — functions for controlling network interface</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/library/network.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="module-network">
+<span id="network-functions-for-controlling-network-interface"></span><h1><a class="reference internal" href="#module-network" title="network: functions related to controlling the network interface"><code class="xref py py-mod docutils literal notranslate"><span class="pre">network</span></code></a> — functions for controlling network interface<a class="headerlink" href="#module-network" title="Link to this heading"></a></h1>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="network.LAN.html">class LAN – control an Ethernet interface</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="monitor.Monitor.html" class="btn btn-neutral float-left" title="class Monitor – information about connected monitors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="network.LAN.html" class="btn btn-neutral float-right" title="class LAN – control an Ethernet interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024-2025 Synaptics Inc..
+      <span class="lastupdated">Last updated on 19 May 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

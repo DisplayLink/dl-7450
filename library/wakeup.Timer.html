@@ -1,0 +1,210 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>class Timer – schedule tasks &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="datastore — Data persistence services" href="datastore.html" />
+    <link rel="prev" title="wakeup — functions for running code at a specific time" href="wakeup.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/start.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API reference guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#python-standard-libraries">Python standard libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#micropython-modules">Micropython modules</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#dl-7450-foundation-libraries">DL-7450 foundation libraries</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="image.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">image</span></code> — representation of image types</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="wakeup.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">wakeup</span></code> — functions for running code at a specific time</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="wakeup.html#functions">Functions</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="wakeup.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-dock-management-libraries">DL-7450 Dock Management libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-web-libraries">DL-7450 web libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-internet-of-things-libraries">DL-7450 Internet-of-Things libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Python API reference guide</a></li>
+          <li class="breadcrumb-item"><a href="wakeup.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">wakeup</span></code> — functions for running code at a specific time</a></li>
+      <li class="breadcrumb-item active">class Timer – schedule tasks</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/library/wakeup.Timer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="class-timer-schedule-tasks">
+<span id="wakeup-timer"></span><h1>class Timer – schedule tasks<a class="headerlink" href="#class-timer-schedule-tasks" title="Link to this heading"></a></h1>
+<p>The <em>Timer</em> class represents a piece of work, or a task, to be performed later,
+and perhaps repeatedly at a given interval. The DL-7450 will “wake up” and
+perform the specified task. For instance, an application developer may want to
+create a weather report to show on the DL-7450 splash screen that is updated
+every ten minutes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">wakeup</span><span class="w"> </span><span class="kn">import</span> <span class="n">Timer</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">update_weather</span><span class="p">():</span>
+  <span class="c1"># perform an HTTP request and update a widget on the</span>
+  <span class="c1"># splash screen</span>
+  <span class="k">pass</span>
+
+<span class="n">timer</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="n">update_weather</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There is no deterministic order for which order timers fire when multiple
+timers are scheduled to fire simultaneously. This means that instantiation
+order and timer lengths cannot be used to “ensure” certain timers fire before
+certain others.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="wakeup.Timer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wakeup.</span></span><span class="sig-name descname"><span class="pre">Timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_ms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat_ms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wakeup.Timer" title="Link to this definition"></a></dt>
+<dd><p>Schedule a task to be carried out later. The parameters are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>task</em>: a callable entity that takes no parameters.</p></li>
+<li><p><em>time_ms</em>: the time delay from now at which to perform the task in milliseconds.
+This value can be set to 0 to perform the task immediately.</p></li>
+<li><p><em>repeat_ms</em>: if this value is non-zero, the task will be performed again every this
+many milliseconds.</p></li>
+</ul>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="wakeup.Timer.cancel">
+<span class="sig-name descname"><span class="pre">cancel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wakeup.Timer.cancel" title="Link to this definition"></a></dt>
+<dd><p>Cancel the timer.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="wakeup.html" class="btn btn-neutral float-left" title="wakeup — functions for running code at a specific time" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datastore.html" class="btn btn-neutral float-right" title="datastore — Data persistence services" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024-2025 Synaptics Inc..
+      <span class="lastupdated">Last updated on 19 May 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

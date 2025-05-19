@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>class Splashscreen – control the DL-7450 splash screen &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="usb — USB Peripheral Management" href="usb.html" />
+    <link rel="prev" title="splashscreen — functions for controlling the DL-7450 splash screen" href="splashscreen.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/start.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API reference guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#python-standard-libraries">Python standard libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#micropython-modules">Micropython modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-foundation-libraries">DL-7450 foundation libraries</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#dl-7450-dock-management-libraries">DL-7450 Dock Management libraries</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="datastore.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datastore</span></code> — Data persistence services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dock.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dock</span></code> — Dock Management Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="monitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">monitor</span></code> — functions for obtaining details of connected monitors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="network.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">network</span></code> — functions for controlling network interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="image.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">image</span></code> — representation of image types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gpio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gpio</span></code> — General-Purpose Input/Output Pin Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="i2c.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">i2c</span></code> — I<sup>2</sup>C Device Management</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="splashscreen.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">splashscreen</span></code> — functions for controlling the DL-7450 splash screen</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="splashscreen.html#overview">Overview</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="splashscreen.html#classes">Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="splashscreen.html#constants">Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="usb.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usb</span></code> — USB Peripheral Management</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-web-libraries">DL-7450 web libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-internet-of-things-libraries">DL-7450 Internet-of-Things libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Python API reference guide</a></li>
+          <li class="breadcrumb-item"><a href="splashscreen.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">splashscreen</span></code> — functions for controlling the DL-7450 splash screen</a></li>
+      <li class="breadcrumb-item active">class Splashscreen – control the DL-7450 splash screen</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/library/splashscreen.Splashscreen.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="class-splashscreen-control-the-dl-7450-splash-screen">
+<span id="splashscreen-splashscreen"></span><h1>class Splashscreen – control the DL-7450 splash screen<a class="headerlink" href="#class-splashscreen-control-the-dl-7450-splash-screen" title="Link to this heading"></a></h1>
+<p>The <em>Splashscreeen</em> class enables control of the DL-7450 splash screen.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">splashscreen</span><span class="w"> </span><span class="kn">import</span> <span class="n">Splashscreen</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datastore</span><span class="w"> </span><span class="kn">import</span> <span class="n">ImageStore</span>
+
+<span class="n">images</span> <span class="o">=</span> <span class="n">ImageStore</span><span class="p">()</span>
+<span class="n">background</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">get_token</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">Splashscreen</span><span class="p">()</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">set_background</span><span class="p">(</span><span class="n">background</span><span class="p">)</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">add_text_box</span><span class="p">([</span>
+  <span class="s2">&quot;&lt;span size=</span><span class="se">\&quot;</span><span class="s2">large</span><span class="se">\&quot;</span><span class="s2">&gt;Info: &lt;b&gt;Company Anniversary Celebration&lt;/b&gt;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Today @ 10:00am in the Atrium&lt;/span&gt;&quot;</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+<section id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="splashscreen.Splashscreen">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">splashscreen.</span></span><span class="sig-name descname"><span class="pre">Splashscreen</span></span><a class="headerlink" href="#splashscreen.Splashscreen" title="Link to this definition"></a></dt>
+<dd><p>Construct an object for controlling the DL-7450 splash screen.</p>
+</dd></dl>
+
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading"></a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="splashscreen.Splashscreen.set_background">
+<span class="sig-prename descclassname"><span class="pre">Splashscreen.</span></span><span class="sig-name descname"><span class="pre">set_background</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">background</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">image.PNG</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#splashscreen.Splashscreen.set_background" title="Link to this definition"></a></dt>
+<dd><p>Set the screen background. The parameters are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>background</em> is either a <a class="reference internal" href="builtins.html#bytearray" title="bytearray"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> object or an <a class="reference internal" href="image.html#image.ImageToken" title="image.ImageToken"><code class="xref any py py-class docutils literal notranslate"><span class="pre">ImageToken</span></code></a> obtained from <a class="reference internal" href="datastore.ImageStore.html#datastore.ImageStore.get_token" title="datastore.ImageStore.get_token"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">ImageStore.get_token</span></code></a>.
+The latter is an optimisation to delay multiple copying of the image from flash storage until it
+needed by the splash screen renderer.</p></li>
+<li><p><em>image_type</em> is a constant defined in the <a class="reference internal" href="image.html#module-image" title="image: Representation of image types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">image</span></code></a> module describing the format of the image.</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="splashscreen.Splashscreen.add_text_box">
+<span class="sig-prename descclassname"><span class="pre">Splashscreen.</span></span><span class="sig-name descname"><span class="pre">add_text_box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#splashscreen.Splashscreen.add_text_box" title="Link to this definition"></a></dt>
+<dd><p>Place text on the screen. The parameters are:</p>
+<blockquote>
+<div><ul>
+<li><p><em>text</em> is either a string or a list of strings. In the case of a list, each
+entry is interpreted as a new line. At present the string can be plain text or
+markup in <a class="reference external" href="https://docs.gtk.org/Pango/pango_markup.html">Pango markup</a>.</p></li>
+<li><p><em>attributes</em> is an optional dictionary describing the position and alignment
+of the text. Possible key-value entries for this dictionary are:</p>
+<ul class="simple">
+<li><p><em>x</em>, <em>y</em> - coordinates to place the text at.</p></li>
+<li><p><em>alignment</em> - an <code class="xref py py-obj docutils literal notranslate"><span class="pre">Alignment</span></code> constant from <a class="reference internal" href="splashscreen.html#module-splashscreen" title="splashscreen: functions related to controlling the splash screen content"><code class="xref py py-mod docutils literal notranslate"><span class="pre">splashscreen</span></code></a> specifying the text alignment.</p></li>
+</ul>
+<p>If this paramater is omitted, the text box is placed in the default user message
+area, in the centre of the screen.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>The text box is identified by its <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> position. Adding a second
+text box at the same coordinates has the effect of updating the text box. A text box
+can be removed by <a class="reference internal" href="#splashscreen.Splashscreen.remove_text_box" title="splashscreen.Splashscreen.remove_text_box"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Splashscreen.remove_text_box</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="splashscreen.Splashscreen.remove_text_box">
+<span class="sig-prename descclassname"><span class="pre">Splashscreen.</span></span><span class="sig-name descname"><span class="pre">remove_text_box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#splashscreen.Splashscreen.remove_text_box" title="Link to this definition"></a></dt>
+<dd><p>Remove a text box that was previously placed on the splash screen at the given coordinates.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="splashscreen.html" class="btn btn-neutral float-left" title="splashscreen — functions for controlling the DL-7450 splash screen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="usb.html" class="btn btn-neutral float-right" title="usb — USB Peripheral Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024-2025 Synaptics Inc..
+      <span class="lastupdated">Last updated on 19 May 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DL-7450 Tutorial" href="tutorial.html" />
+    <link rel="prev" title="Introducing the DL-7450" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="start.html">Getting started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introducing the DL-7450</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html">DL-7450 Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">Deploying code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paradigm.html">Programming paradigm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickref.html">Quick reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../library/index.html">Python API reference guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="start.html">Getting started</a></li>
+      <li class="breadcrumb-item active">Security</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/dl_7450/security.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="security">
+<span id="dl-7450-security"></span><h1>Security<a class="headerlink" href="#security" title="Link to this heading"></a></h1>
+<p>Synaptics has a long history of creating secure products, from Fingerprint
+Sensors to Video Content Protection (HDCP etc). Employees have regular training
+on security awareness. Synaptics is an active member of several industry groups:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://fidoalliance.org/">The FIDO Alliance</a></p></li>
+<li><p><a class="reference external" href="https://iotsecurityfoundation.org/">Internet of Things Security Foundation (IoTSF) Founder Members</a></p></li>
+<li><p><a class="reference external" href="https://www.digital-cp.com/">Digital Content Protections (DCP)</a> adopters</p></li>
+</ul>
+</div></blockquote>
+<p>Synaptics follows <a class="reference external" href="https://www.synaptics.com/vulnerability-disclosure-policy">Best Practice Security Vulnerability Management</a>
+and has a <em>Product Security Incident Response Team</em> (PSIRT). We are an official <a class="reference external" href="https://www.cve.org/ProgramOrganization/CNAs">*CVE Numbering Authority*</a> (CNA).</p>
+<p><strong>DL-7450 Security</strong></p>
+<p>Synaptics takes a standardized approach to Security. The DL-7450 has a secure
+boot processor, and hardware accelerator for cryptography functions (e.g.
+AES128/256). It also has locked <em>One Time Programmable (OTP) Elements</em>
+provisioned in the silicon factory. The OTP elements are hardened against
+physical silicon attack. The chis has secure CPU functionality with anti-side
+channel attack protection built in. The boot processor and OTP provides a
+secure zone for cryptographic functions.</p>
+<p>The DL-7450 has a small trusted computing base. The primary boot code is stored
+in ROM and is therefore immutable. It is heavily reviewed and validated, thus
+reducing the surface area for attacks. The primary bootloader cryptographically
+validates all other code. The primary boot code is deliberately small with low
+complexity and manages the cryptographic primitives. More complex security
+algorithms are in later layers and based on the primitives and is updatable in
+case vulnerabilities are discovered. This provides the DL-7450 with a <em>root of
+trust</em> (RoT). Secure assets, such as cryptographic keys, are stored in a secure
+OTP Vault. All critical data is encrypted, and has mitigations against single
+bit error attacks. The OTP vault is hardened against silicon level attacks. The
+key types stored in OTP are</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Application code signatures</p></li>
+<li><p>Digital content Protection keys and certificates</p></li>
+<li><p>Unique Serial Number</p></li>
+<li><p>Silicon type identifier</p></li>
+</ul>
+</div></blockquote>
+<p>The on-chip Security processor is isolated from other processors, hardened
+against fault attacks, hardened against side channel scanning and linked to a
+hardware AES 128/256 accelerator. This makes it <em>Post Quantum Cryptography</em>
+(PQC) prepared/ resistant.</p>
+<p>The hardware-based root of trust ensures that the DL-7450 and its identity cannot
+be separated, thus preventing device forgery or spoofing. Each DL-7450 is
+identified by an unforgeable cryptographic key. Keys and other assets are
+provisioned at manufacture time and stored in the encrypted and hardened OTP vault.
+The keys are generated and protected by our security signing release hardware.
+This ensures a tamper-resistant, secured hardware root of trust from factory to
+end user.</p>
+<p>DL-7450 cryptography is based on Industry standard algorithms. It has a
+built-in cryptographic core with AES 128/256 accelerator and programmable
+modes. Primary security is through AES-CCM (Counter with CBC-MAC). This is a
+mode approved by <a class="reference external" href="https://www.nist.gov/cyberframework">NIST Cybersecurity Framework</a>, and is suited to managing integrity of
+controlled/fixed systems such as DL-7450. Security Best Practice recommends
+that bulk ciphers are now expected to be an AEAD or <em>Authenticated Encryption
+with Associated Data algorithm</em>, meaning that it can not only encrypt the data
+but also authenticate it. The AES-CCM conforms to this requirement.</p>
+<p>Defense-in-depth provides for multiple layers of security and thus multiple
+mitigations against each threat. Each stage of the boot and application process
+is protected by the previous stage. Successive Stages cannot run unless
+validated. All Components are protected using industry approved cryptographic
+algorithms (e.g. NIST). Once a secure system is running, then only signed
+encrypted modules can be further loaded.</p>
+<p><strong>Internet-of-Things (IoT) Security</strong>
+The DL-7450 can be purposed as an IoT device. For example, it could be
+registered in a cloud IoT connectivity provider such as <a class="reference external" href="https://azure.microsoft.com/en-gb/products/iot-hub/">Azure IoT Hub</a>. The DL-7450 uses the
+latest security protocols e.g. TLS1.3, as we control. We can leverage our
+hardware root-of-trust and cryptographic enginers to provide industry-standard
+client certificates and support client verifcation during <em>Transport Layer
+Security</em> (TLS) handshakes. Partner application payloads can be encrypted using
+the most secure cipher suits, such as <a class="reference external" href="https://csrc.nist.gov/projects/elliptic-curve-cryptography">Elliptic Curve Diffie-Hellman</a> for
+<em>perfect forward secrecy</em> (PFS), in order to keep data confidential and
+maintain its integrity. We can also leverage the hardware root of trust in the
+DL-7450 to store immutable security credentials, and manage the data payload -
+this allows the communication engine and the IoT Cloud/client data collection
+to be separated but still secure.</p>
+<p>The device software is automatically updated if required, both to add features
+and to correct known vulnerabilities or security breaches. These updates
+require no intervention from the product manufacturer or the end user. The
+updates are managed though Microsoft Windows Update.</p>
+<p>Errors in device software or hardware are typical in emerging security attacks.
+Runtime telemetry is stored in an encrypted log file and may be used for remote
+diagnostics. The DL-7450 SDK for application developers can offer the option to
+retrieve telemetry for real time analysis and mitigation.</p>
+<p><strong>Secure Software Development process and Life Cycle</strong></p>
+<p>Synaptics follows audited security processes for managing key assets:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Secure Signing machine processes</dt><dd><ul>
+<li><p>Certicom (for OTP)</p></li>
+<li><p>Air-Gapped Hardware Signing Machines (HSMs) for Secure firmware updates</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Code Quality tools (used on check-in and build)</dt><dd><ul>
+<li><p>Code scanning for consistency/adherence to code guidelines</p></li>
+<li><p>Code Scanning for security vulnerabilities in third-party libraries</p></li>
+<li><p>The DL-7450 has an associated risk analysis and risk registers for security</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Regular release processes</dt><dd><ul>
+<li><p>formalized release checklists and signing (including security checks)</p></li>
+<li><p>External libraries (SBoM - Software Bill of Materials) are managed and updated if necessary</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Encrypted/Signed and authenticated code for in-field updates</p></li>
+</ul>
+</div></blockquote>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introducing the DL-7450" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial.html" class="btn btn-neutral float-right" title="DL-7450 Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024-2025 Synaptics Inc..
+      <span class="lastupdated">Last updated on 19 May 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

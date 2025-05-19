@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>datastore — Data persistence services &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class ImageStore – store and retrieve image data" href="datastore.ImageStore.html" />
+    <link rel="prev" title="class Timer – schedule tasks" href="wakeup.Timer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/start.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API reference guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#python-standard-libraries">Python standard libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#micropython-modules">Micropython modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-foundation-libraries">DL-7450 foundation libraries</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#dl-7450-dock-management-libraries">DL-7450 Dock Management libraries</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datastore</span></code> — Data persistence services</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#application-rom-storage-during-development">Application ROM Storage during development</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ephemeral-application-code-during-development">Ephemeral application code during development</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#classes">Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dock.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dock</span></code> — Dock Management Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="monitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">monitor</span></code> — functions for obtaining details of connected monitors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="network.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">network</span></code> — functions for controlling network interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="image.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">image</span></code> — representation of image types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gpio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gpio</span></code> — General-Purpose Input/Output Pin Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="i2c.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">i2c</span></code> — I<sup>2</sup>C Device Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="splashscreen.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">splashscreen</span></code> — functions for controlling the DL-7450 splash screen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usb.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usb</span></code> — USB Peripheral Management</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-web-libraries">DL-7450 web libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-internet-of-things-libraries">DL-7450 Internet-of-Things libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Python API reference guide</a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datastore</span></code> — Data persistence services</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/library/datastore.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="module-datastore">
+<span id="datastore-data-persistence-services"></span><h1><a class="reference internal" href="#module-datastore" title="datastore: Data persistence services"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datastore</span></code></a> — Data persistence services<a class="headerlink" href="#module-datastore" title="Link to this heading"></a></h1>
+<p>This module contains classes for managing storage and retrieval of application
+data. Logically, the DL-7450 <a class="reference internal" href="#module-datastore" title="datastore: Data persistence services"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datastore</span></code></a> is a single entity, with
+different partitions. There is an <a class="reference internal" href="datastore.ImageStore.html#datastore.ImageStore" title="datastore.ImageStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageStore</span></code></a> interface for
+retreiving images from the persistent data store. The image data is available
+as a python <a class="reference internal" href="builtins.html#bytearray" title="bytearray"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> and the type is identified by one of the image type
+constants from the <a class="reference internal" href="image.html#module-image" title="image: Representation of image types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">image</span></code></a> module. Alternatively, a token may be used
+for later retreiving an image. This may reduce the number of copies of the
+image data created and used by your application. Simple key-value pairs can be
+stored and retrieved using the <a class="reference internal" href="datastore.KvStore.html#datastore.KvStore" title="datastore.KvStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">KvStore</span></code></a> interface. The python
+application itself also resides in the datastore, but is not explicitly
+accessible from the application. In later releases of the SDK, storage for
+futher types, such as fonts will be provided.</p>
+<p>Data may also be stored in different ways. Persistent application data is of
+two possible types:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Factory settings</em> or <em>Read-only memory (ROM)</em> storage. Manufacturers can
+provision the DL-7450 with application data in the manufacturing process,
+such as branded splash screen backgrounds or the URL of a content provider.
+It is also possible to provide unique-per-dock (UPD) data, such as
+enrolment tokens for IoT cloud service providers.</p></li>
+<li><p><em>Runtime settings:</em> Applications may store data that is not set in the
+factory, but which persists across DL-7450 restarts. Such data may include
+access tokens for cloud providers or local network settings that have been
+provisioned remotely after the dock has been deployed in an enterprise
+setting.</p></li>
+</ul>
+</div></blockquote>
+<p>There is an additional non-persistent storage type:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Ephemeral settings:</em> Applications may store data that is useful at
+runtime, but is not essential to store across dock restarts. For example,
+image data can be large, and it is not possible to keep many on the Python
+runtime memory storage. In this case an application can store them in
+out-of-process memory and retrieve them on demand. An example use-case is
+using the ephemeral storage area to avoid having to make slow HTTP
+requests to obtain subsequent data.</p></li>
+</ul>
+</div></blockquote>
+<p>When an application requests an item from the datastore, unless explicitly
+stated otherwise, there is an order of preference. For example if the
+application requests a splash screen background with image tag <em>default_img</em>,
+first the ephemeral store will be checked, followed by the runtime store and
+finally the ROM/factory store.</p>
+<p>The amounts available for different types of data is currently as follows.
+There is no restriction on how data is distributed across the available
+storage, i.e. an applicaiton developer can use it as they see fit for code,
+images and key-value data.</p>
+<blockquote>
+<div><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data Storage</p></th>
+<th class="head"><p>Available</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Factory/ROM</p></td>
+<td><p>13MB</p></td>
+</tr>
+<tr class="row-odd"><td><p>Runtime</p></td>
+<td><p>13MB</p></td>
+</tr>
+<tr class="row-even"><td><p>Ephemeral</p></td>
+<td><p>128MB</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="tip admonition">
+<p class="admonition-title">Not yet implemented</p>
+<p>In the present version of the DL-7450 SDK only the application ROM store is
+implemented.</p>
+</div>
+<section id="application-rom-storage-during-development">
+<h2>Application ROM Storage during development<a class="headerlink" href="#application-rom-storage-during-development" title="Link to this heading"></a></h2>
+<p>The Application ROM storage area, also referred to as <em>Factory storage</em>
+provides a mechanism to deploy a customer application and associated data in
+the manufacturing process. This enables the customer’s DL-7450 dock to run the
+customer application on first boot after sale to the end user. The semantics of
+the application ROM store is as suggested by the name, a read-only data store.
+This supports a factory-reset operation on the dock. One usage pattern might be
+for a customer to ship a dock with a basic application in factory storage,
+which bootstraps another application that requires user-specific data in the
+field. Another usage pattern is that the application ROM store contains version
+N of the application, which can be updated to a later version which is stored
+in the runtime store. Yet another case is that the factory application might
+provide corporate imagery of the dock manufacturer, which can be overridden in
+the field by corporate imagery of the end-user. In all cases, a a factory reset
+will cause the application and its data to be restored to the state that it was
+manufactured in.</p>
+<p>Therefore, the <a class="reference internal" href="#module-datastore" title="datastore: Data persistence services"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datastore</span></code></a> APIs in the DL-7450 SDK do not allow the ROM store
+area to be written to. While this is the required behaviour in a production
+docking station, it is too restrictive for development. To support development,
+DisplayLink has provided a REST API in our development cloud to populate the
+factory store. The details are provided with the <a class="extlink-githubSamples reference external" href="https://github.com/DisplayLink/dl-7450/tree/main//scripts/README.md">supporting
+scripts</a>. Note that the operation is atomic and
+destructive - i.e. the application ROM store is replaced in a single operation.
+This mechanism will not be available to docks in production.</p>
+</section>
+<section id="ephemeral-application-code-during-development">
+<h2>Ephemeral application code during development<a class="headerlink" href="#ephemeral-application-code-during-development" title="Link to this heading"></a></h2>
+<p>To support development, DisplayLink provides a REST API to deploy new
+application code immediately to the dock. This makes use of ephemeral data
+storage. The details of how to use this API are given with the
+<a class="extlink-githubSamples reference external" href="https://github.com/DisplayLink/dl-7450/tree/main//scripts/README.md">supporting scripts</a>.</p>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="datastore.ImageStore.html">class ImageStore – store and retrieve image data</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="datastore.KvStore.html">class KvStore – store and retrieve simple data</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="wakeup.Timer.html" class="btn btn-neutral float-left" title="class Timer – schedule tasks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datastore.ImageStore.html" class="btn btn-neutral float-right" title="class ImageStore – store and retrieve image data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024-2025 Synaptics Inc..
+      <span class="lastupdated">Last updated on 19 May 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

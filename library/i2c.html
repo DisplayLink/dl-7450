@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>i2c — I2C Device Management &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class I2C – manage a DL-7450 I2C bus" href="i2c.I2C.html" />
+    <link rel="prev" title="class DigitalOutput – manage a GPIO configured as a digital output" href="gpio.DigitalOutput.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/start.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API reference guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#python-standard-libraries">Python standard libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#micropython-modules">Micropython modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-foundation-libraries">DL-7450 foundation libraries</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#dl-7450-dock-management-libraries">DL-7450 Dock Management libraries</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="datastore.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datastore</span></code> — Data persistence services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dock.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dock</span></code> — Dock Management Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="monitor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">monitor</span></code> — functions for obtaining details of connected monitors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="network.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">network</span></code> — functions for controlling network interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="image.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">image</span></code> — representation of image types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gpio.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gpio</span></code> — General-Purpose Input/Output Pin Management</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">i2c</span></code> — I<sup>2</sup>C Device Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tips-for-writing-an-i2c-driver">Tips For Writing an I<sup>2</sup>C Driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#constants">Constants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#classes">Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="splashscreen.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">splashscreen</span></code> — functions for controlling the DL-7450 splash screen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usb.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">usb</span></code> — USB Peripheral Management</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-web-libraries">DL-7450 web libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-internet-of-things-libraries">DL-7450 Internet-of-Things libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Python API reference guide</a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">i2c</span></code> — I<sup>2</sup>C Device Management</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/library/i2c.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="module-i2c">
+<span id="i2c-i2c-device-management"></span><h1><a class="reference internal" href="#module-i2c" title="i2c: i2c Peripheral Management"><code class="xref py py-mod docutils literal notranslate"><span class="pre">i2c</span></code></a> — I<sup>2</sup>C Device Management<a class="headerlink" href="#module-i2c" title="Link to this heading"></a></h1>
+<p>Inter-Integrated Circuit (I<sup>2</sup>C) is a simple two-wire serial
+communication protocol. The two lines are the <em>serial data line</em> (SDA) and the
+<em>serial clock line</em> (SCL). A controller, or master, node on the bus can send
+commands to and read data from target, or slave, nodes on the bus. Texas Instruments provides
+<a class="reference external" href="https://www.ti.com/lit/an/sbaa565/sbaa565.pdf?ts=1726027662062">A Basic Guide to I2C</a>.</p>
+<p>As outlined in the <a class="reference external" href="https://cp.synaptics.com/cognidox/view/NR-152259-AN">DL-12xx, DL-25xx and DL-7xx Design Guidelines</a> there are several I<sup>2</sup>C interfaces available to the DL7450. At present the <em>i2c</em> module
+gives application developers an interface to the I2C1 bus via the SDK. The SDK
+samples include simple examples of drivers for I<sup>2</sup>C devices.</p>
+<section id="tips-for-writing-an-i2c-driver">
+<h2>Tips For Writing an I<sup>2</sup>C Driver<a class="headerlink" href="#tips-for-writing-an-i2c-driver" title="Link to this heading"></a></h2>
+<p>The application developer is responsible for the placement of the I<sup>2</sup>C
+device on the bus, and understanding how its address is assigned. The base
+address of the device is a 7-bit number determined by the vendor. Often vendors
+allow the application developer to specify the lowest 2 or 3 bits by providing
+2 or 3 pins which can be brought high or low using resistors. For example the
+<a class="reference external" href="https://ww1.microchip.com/downloads/en/DeviceDoc/25095A.pdf">MCP9808 Temperature Sensor</a>  uses a base
+address of 0x18, or 0b0011000. Any of the 3 least significant bits can be set
+using the address pins, giving a possible range of addresses from 0x18 to 0x1F.
+Please read the vendor data sheet carefully.</p>
+<p>Sometimes a vendor datasheet will provide two <em>8</em>-bit device addresses, one for
+read operations and one for write operations. To use the DL7450 i2c module
+correctly, you must obtain the correct 7-bit address in such cases. The 8-bit
+number arises from including the read-write bit of the register in the device
+address. To extract the correct 7-bit address, use the most-significant 7 bits
+and apply a right shift (half).  For example if the datasheet might give a
+write address of 0x92 (0b10010010) and a read address of 0x93 (0b10010011).  To
+use the DL7450 SDK use a device address of 0x49 (0b1001001).</p>
+<p>Finally, there are some addresses that are reserved.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>000 0xxx (0x00 to 0x07) reserved.</p></li>
+<li><p>0x08 to 0x77 valid address range.</p></li>
+<li><p>111 1xxx (0x78 to 0x7f) reserved</p></li>
+</ul>
+</div></blockquote>
+<p>The read and write methods in the DL7450 i2c module will raise an error if the
+device address is outside the valid range of 7-bit addresses, or if there is
+not device present at the given address. In all cases, it is the responsibility
+of the application developer to provide the correct device address. An
+incorrect address will result in an <a class="reference internal" href="i2c.I2cError.html#i2c-i2cerror"><span class="std std-ref">I2cError</span></a> being
+raised.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">i2c</span><span class="w"> </span><span class="kn">import</span> <span class="n">I2C</span><span class="p">,</span> <span class="n">I2cError</span>
+
+<span class="n">BASE_ADDRESS</span> <span class="o">=</span> <span class="mh">0x18</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MCP9808</span>
+  <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">i2c</span> <span class="o">=</span> <span class="n">I2C</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">i2c</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">BASE_ADDRESS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">I2cError</span><span class="p">:</span>
+      <span class="c1"># invalid base address.</span>
+      <span class="k">pass</span>
+</pre></div>
+</div>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="i2c.i2c">
+<span class="sig-prename descclassname"><span class="pre">i2c.</span></span><span class="sig-name descname"><span class="pre">i2c</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">i2c.Bus.I2C1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#i2c.i2c" title="Link to this definition"></a></dt>
+<dd><p>Obtain an interface to an I<sup>2</sup>C interface. At present, the DL7450
+SDK only provides access to devices on the I2C1 bus. Calling this function
+with any other parameters will result in an <a class="reference internal" href="i2c.I2cError.html#i2c-i2cerror"><span class="std std-ref">I2cError</span></a> being raised. Returns an <a class="reference internal" href="i2c.I2C.html#i2c-i2c"><span class="std std-ref">I2C</span></a> object.</p>
+</dd></dl>
+
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Link to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="i2c.Bus.I2C1">
+<span class="sig-prename descclassname"><span class="pre">Bus.</span></span><span class="sig-name descname"><span class="pre">I2C1</span></span><a class="headerlink" href="#i2c.Bus.I2C1" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="i2c.Bus.I2C0">
+<span class="sig-prename descclassname"><span class="pre">Bus.</span></span><span class="sig-name descname"><span class="pre">I2C0</span></span><a class="headerlink" href="#i2c.Bus.I2C0" title="Link to this definition"></a></dt>
+<dd><p>An identifier for one of the DL7450 I<sup>2</sup>C buses. At present the SDK
+only provides an interface to the I2C1 bus.</p>
+</dd></dl>
+
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="i2c.I2C.html">class I2C – manage a DL-7450 I2C bus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="i2c.I2cError.html">class I2cError</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="gpio.DigitalOutput.html" class="btn btn-neutral float-left" title="class DigitalOutput – manage a GPIO configured as a digital output" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="i2c.I2C.html" class="btn btn-neutral float-right" title="class I2C – manage a DL-7450 I2C bus" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024-2025 Synaptics Inc..
+      <span class="lastupdated">Last updated on 19 May 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

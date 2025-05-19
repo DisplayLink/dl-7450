@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>class FrameBuffer &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="image — representation of image types" href="image.html" />
+    <link rel="prev" title="framebuf — frame buffer manipulation" href="framebuf.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/start.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API reference guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#python-standard-libraries">Python standard libraries</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#micropython-modules">Micropython modules</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="framebuf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">framebuf</span></code> — frame buffer manipulation</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="framebuf.html#classes">Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="framebuf.html#constants">Constants</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-foundation-libraries">DL-7450 foundation libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-dock-management-libraries">DL-7450 Dock Management libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-web-libraries">DL-7450 web libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-internet-of-things-libraries">DL-7450 Internet-of-Things libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Python API reference guide</a></li>
+          <li class="breadcrumb-item"><a href="framebuf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">framebuf</span></code> — frame buffer manipulation</a></li>
+      <li class="breadcrumb-item active">class FrameBuffer</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/library/framebuf.FrameBuffer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="class-framebuffer">
+<span id="framebuf-framebuffer"></span><h1>class FrameBuffer<a class="headerlink" href="#class-framebuffer" title="Link to this heading"></a></h1>
+<p>The FrameBuffer class provides a pixel buffer which can be drawn upon with
+pixels, lines, rectangles, ellipses, polygons, text and even other
+FrameBuffers. It is useful when generating output for displays.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">framebuf</span>
+
+<span class="c1"># FrameBuffer needs 2 bytes for every RGB565 pixel</span>
+<span class="n">fbuf</span> <span class="o">=</span> <span class="n">framebuf</span><span class="o">.</span><span class="n">FrameBuffer</span><span class="p">(</span><span class="nb">bytearray</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">framebuf</span><span class="o">.</span><span class="n">RGB565</span><span class="p">)</span>
+
+<span class="n">fbuf</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">fbuf</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s1">&#39;MicroPython!&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0xffff</span><span class="p">)</span>
+<span class="n">fbuf</span><span class="o">.</span><span class="n">hline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mh">0xffff</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">framebuf.</span></span><span class="sig-name descname"><span class="pre">FrameBuffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer" title="Link to this definition"></a></dt>
+<dd><p>Construct a FrameBuffer object.  The parameters are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>buffer</em> is an object with a buffer protocol which must be large
+enough to contain every pixel defined by the width, height and
+format of the FrameBuffer.</p></li>
+<li><p><em>width</em> is the width of the FrameBuffer in pixels</p></li>
+<li><p><em>height</em> is the height of the FrameBuffer in pixels</p></li>
+<li><p><em>format</em> specifies the type of pixel used in the FrameBuffer;
+permissible values are listed under Constants below. These set the
+number of bits used to encode a color value and the layout of these
+bits in <em>buffer</em>.
+Where a color value c is passed to a method, c is a small integer
+with an encoding that is dependent on the format of the FrameBuffer.</p></li>
+<li><p><em>stride</em> is the number of pixels between each horizontal line
+of pixels in the FrameBuffer. This defaults to <em>width</em> but may
+need adjustments when implementing a FrameBuffer within another
+larger FrameBuffer or screen. The <em>buffer</em> size must accommodate
+an increased step size.</p></li>
+</ul>
+</div></blockquote>
+<p>One must specify valid <em>buffer</em>, <em>width</em>, <em>height</em>, <em>format</em> and
+optionally <em>stride</em>.  Invalid <em>buffer</em> size or dimensions may lead to
+unexpected errors.</p>
+</dd></dl>
+
+</section>
+<section id="drawing-primitive-shapes">
+<h2>Drawing primitive shapes<a class="headerlink" href="#drawing-primitive-shapes" title="Link to this heading"></a></h2>
+<p>The following methods draw shapes onto the FrameBuffer.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.fill">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.fill" title="Link to this definition"></a></dt>
+<dd><p>Fill the entire FrameBuffer with the specified color.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.pixel">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.pixel" title="Link to this definition"></a></dt>
+<dd><p>If <em>c</em> is not given, get the color value of the specified pixel.
+If <em>c</em> is given, set the specified pixel to the given color.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.hline">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">hline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.hline" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.vline">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">vline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.vline" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.line">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.line" title="Link to this definition"></a></dt>
+<dd><p>Draw a line from a set of coordinates using the given color and
+a thickness of 1 pixel. The <a class="reference internal" href="#framebuf.FrameBuffer.line" title="framebuf.FrameBuffer.line"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">line</span></code></a> method draws the line up to
+a second set of coordinates whereas the <a class="reference internal" href="#framebuf.FrameBuffer.hline" title="framebuf.FrameBuffer.hline"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">hline</span></code></a> and <a class="reference internal" href="#framebuf.FrameBuffer.vline" title="framebuf.FrameBuffer.vline"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">vline</span></code></a>
+methods draw horizontal and vertical lines respectively up to
+a given length.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.rect">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">rect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.rect" title="Link to this definition"></a></dt>
+<dd><p>Draw a rectangle at the given location, size and color.</p>
+<p>The optional <em>f</em> parameter can be set to <a class="reference internal" href="builtins.html#True" title="True"><code class="xref any py py-data docutils literal notranslate"><span class="pre">True</span></code></a> to fill the rectangle.
+Otherwise just a one pixel outline is drawn.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.ellipse">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">ellipse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.ellipse" title="Link to this definition"></a></dt>
+<dd><p>Draw an ellipse at the given location. Radii <em>xr</em> and <em>yr</em> define the
+geometry; equal values cause a circle to be drawn. The <em>c</em> parameter
+defines the color.</p>
+<p>The optional <em>f</em> parameter can be set to <a class="reference internal" href="builtins.html#True" title="True"><code class="xref any py py-data docutils literal notranslate"><span class="pre">True</span></code></a> to fill the ellipse.
+Otherwise just a one pixel outline is drawn.</p>
+<p>The optional <em>m</em> parameter enables drawing to be restricted to certain
+quadrants of the ellipse. The LS four bits determine which quadrants are
+to be drawn, with bit 0 specifying Q1, b1 Q2, b2 Q3 and b3 Q4. Quadrants
+are numbered counterclockwise with Q1 being top right.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.poly">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">poly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.poly" title="Link to this definition"></a></dt>
+<dd><p>Given a list of coordinates, draw an arbitrary (convex or concave) closed
+polygon at the given x, y location using the given color.</p>
+<p>The <em>coords</em> must be specified as a <code class="xref py py-mod docutils literal notranslate"><span class="pre">array</span></code> of integers, e.g.
+<code class="docutils literal notranslate"><span class="pre">array('h',</span> <span class="pre">[x0,</span> <span class="pre">y0,</span> <span class="pre">x1,</span> <span class="pre">y1,</span> <span class="pre">...</span> <span class="pre">xn,</span> <span class="pre">yn])</span></code>.</p>
+<p>The optional <em>f</em> parameter can be set to <a class="reference internal" href="builtins.html#True" title="True"><code class="xref any py py-data docutils literal notranslate"><span class="pre">True</span></code></a> to fill the polygon.
+Otherwise just a one pixel outline is drawn.</p>
+</dd></dl>
+
+</section>
+<section id="drawing-text">
+<h2>Drawing text<a class="headerlink" href="#drawing-text" title="Link to this heading"></a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.text">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.text" title="Link to this definition"></a></dt>
+<dd><p>Write text to the FrameBuffer using the the coordinates as the upper-left
+corner of the text. The color of the text can be defined by the optional
+argument but is otherwise a default value of 1. All characters have
+dimensions of 8x8 pixels and there is currently no way to change the font.</p>
+</dd></dl>
+
+</section>
+<section id="other-methods">
+<h2>Other methods<a class="headerlink" href="#other-methods" title="Link to this heading"></a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.scroll">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">scroll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xstep</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ystep</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.scroll" title="Link to this definition"></a></dt>
+<dd><p>Shift the contents of the FrameBuffer by the given vector. This may
+leave a footprint of the previous colors in the FrameBuffer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.blit">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">blit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fbuf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.blit" title="Link to this definition"></a></dt>
+<dd><p>Draw another FrameBuffer on top of the current one at the given coordinates.
+If <em>key</em> is specified then it should be a color integer and the
+corresponding color will be considered transparent: all pixels with that
+color value will not be drawn. (If the <em>palette</em> is specified then the <em>key</em>
+is compared to the value from <em>palette</em>, not to the value directly from
+<em>fbuf</em>.)</p>
+<p>The <em>palette</em> argument enables blitting between FrameBuffers with differing
+formats. Typical usage is to render a monochrome or grayscale glyph/icon to
+a color display. The <em>palette</em> is a FrameBuffer instance whose format is
+that of the current FrameBuffer. The <em>palette</em> height is one pixel and its
+pixel width is the number of colors in the source FrameBuffer. The <em>palette</em>
+for an N-bit source needs 2**N pixels; the <em>palette</em> for a monochrome source
+would have 2 pixels representing background and foreground colors. The
+application assigns a color to each pixel in the <em>palette</em>. The color of the
+current pixel will be that of that <em>palette</em> pixel whose x position is the
+color of the corresponding source pixel.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="framebuf.html" class="btn btn-neutral float-left" title="framebuf — frame buffer manipulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="image.html" class="btn btn-neutral float-right" title="image — representation of image types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024-2025 Synaptics Inc..
+      <span class="lastupdated">Last updated on 19 May 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introducing the DL-7450 &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Security" href="security.html" />
+    <link rel="prev" title="Getting started" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="start.html">Getting started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html">Getting started</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Introducing the DL-7450</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html">DL-7450 Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">Deploying code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paradigm.html">Programming paradigm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickref.html">Quick reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../library/index.html">Python API reference guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="start.html">Getting started</a></li>
+      <li class="breadcrumb-item active">Introducing the DL-7450</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/dl_7450/introduction.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="introducing-the-dl-7450">
+<span id="dl-7450-introduction"></span><h1>Introducing the DL-7450<a class="headerlink" href="#introducing-the-dl-7450" title="Link to this heading"></a></h1>
+<p>Synaptics is expanding its architecture by offering reference platform designs
+through a Software Development Kit (SDK), allowing partners to customize
+software features and applications using a growing Application Programming
+Interface (API). The API classes and methods will grant access to various
+components of the DL-7450 silicon, enabling customer code to run on
+dedicated processors via a Python virtual machine.  Over time, additional APIs
+will become available, providing broader access to different parts of the
+platform, and offering more customized control for designing future products.</p>
+<p>The Synaptics SDK will equip developers with a comprehensive set of tools,
+libraries, and documentation to create applications for specific platforms or
+software frameworks. It offers the essential resources and guidelines needed to
+build applications efficiently and effectively, streamlining the development
+process with pre-built components and sample code that can be easily
+integrated. This approach allows developers to focus on the core logic of their
+applications without having to reinvent common features.</p>
+<p>Included in the SDK are debugging tools and testing frameworks to help
+developers identify and resolve issues swiftly. By providing access to
+third-party services and APIs, the SDK helps developers enhance the
+functionality of their software without the need to build and maintain these
+features independently. This essential tool simplifies the development process,
+ensuring compatibility and consistency, while offering access to valuable
+third-party services.</p>
+<p>Using the SDK, developers can save time, reduce errors, and create high-quality
+applications that meet platform or framework standards and requirements. This
+efficiency enables them to address customer needs more effectively and
+differentiate their platforms in the market.</p>
+<p><strong>Included in the box</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Reference DL-7450 board and corresponding daughter cards</p></li>
+<li><p>AC power adapter (USB Power Delivery)</p></li>
+<li><p>USB-C cable (USB-C plugs on both ends)</p></li>
+<li><p>AC plug adapter (IET Type A receptacle / Type C plug, used only if applicable)</p></li>
+</ol>
+</div></blockquote>
+<p><strong>Additional items needed</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple" start="5">
+<li><p>Display monitors with HDMI / DP ports</p></li>
+<li><p>Up to 4 monitors can be supported from a single reference board</p></li>
+<li><p>A HDMI cable (standard HDMI Type A plugs on both ends)</p></li>
+<li><p>Ethernet Cat 5/6/6e RJ.45 connected cable</p></li>
+</ol>
+</div></blockquote>
+<p>Note: Ethernet or network connection is not needed for the initial boot.</p>
+<p><strong>Initial connections</strong></p>
+<p>The below graphic shows a typical connection to a host device with 2
+x 4K DisplayPort monitors, 2 x 4K HDMI monitors and Gigabit Ethernet interface.
+Power for the reference design is provided by an external AC/DC power supply.</p>
+<img alt="../_images/dl7450_connections.png" src="../_images/dl7450_connections.png" />
+<p>Our DisplayLink technology makes it simple to connect any display to any
+computer that supports USB or Wi-Fi and provides universal solutions for a
+range of corporate, home and embedded applications where easy connectivity of
+displays enhances productivity. With DisplayLink, expanding your visual
+workspace has never been easier or more affordable. Our technology makes it
+really easy to connect any display to any computer. We call this Plug and
+Display. To get the latest version of host software please visit
+<a class="reference external" href="https://www.synaptics.com/products/displaylink-graphics">our download area</a>.</p>
+<p><strong>Setting up the hardware</strong></p>
+<p>The assembled reference design, <em>DL-7450-Redwood Quad Video IoT dock</em>, or just
+<em>Redwood</em> includes a 2.5GbE PHY daughter board (plugged into J6) and a
+Joystick.</p>
+<img alt="../_images/redwood.png" src="../_images/redwood.png" />
+<p>The  reference design is provided as a functional demonstrator of the DL-7450
+SoC implemented in an IoT quad video (2 x DisplayPort and 2 x HDMI) dock
+design. The design is intended to be refined at a future date by ODM partners.
+The evaluation-ready kit enables easy and rapid prototyping for the Synaptics
+DL-7450 processor. This page lists the simple steps to power on and boot up the
+system.</p>
+<p>The following graphic shows the board connectors, switches and jumpers.</p>
+<img alt="../_images/redwood_connectors.png" src="../_images/redwood_connectors.png" />
+<img alt="../_images/board_connectivity.png" src="../_images/board_connectivity.png" />
+<p><strong>Board Connectivity</strong></p>
+<p>The reference design supports the following connections:</p>
+<p>Display Ports – J12, J14</p>
+<p>The reference design supports two DisplayPort interfaces DP1 and DP3. Both
+ports are connected the same.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>J12 – DL-7450 DisplayPort 1</p></li>
+<li><p>J14 – DL-7450 DisplayPort 3 (Provides <em>Display Stream Compression</em> (DSC) Support)</p></li>
+</ul>
+</div></blockquote>
+<p>HDMI Ports – J11, J13</p>
+<p>The reference design supports two HDMI Port interfaces using DP0 and DP2 up to
+HDMI2.0 Mode.  Both ports are connected the same.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>J11 – DL-7450 HDMI 1 using DisplayPort 0 (In HDMI Mode)</p></li>
+<li><p>J13 – DL-7450 HDMI 2 using DisplayPort 2 (In HDMI Mode)</p></li>
+</ul>
+</div></blockquote>
+<p>USB Ports – J15, J16, J19, J20, J21</p>
+<p>The <em>Redwood</em> incorporates a USB3.2 Gen2 hub with USB power delivery (PD) support.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>J15 – USB 3.2 Gen 1 USB-A Downstream facing port</p></li>
+<li><p>J16 – USB 3.2 Gen 1 USB-A Downstream facing port</p></li>
+<li><p>J19 – USB 3.2 Gen 2 USB-C Downstream facing port</p></li>
+<li><p>J20 – USB 3.2 Gen 2 USB-C Upstream facing port</p></li>
+<li><p>J21 – USB 3.2 Gen 2 USB-C Upstream facing port with USB power delivery (PD) support.</p></li>
+</ul>
+</div></blockquote>
+<p>As J20 and J21 are both upstream facing ports only one port shall be connected
+to a host at any one time.  LED7 (J21) and LED8 (J20) indicate which port is
+active.</p>
+<p>DC Power Input – J9</p>
+<p>The J9 DC power input is used to provide power to the <em>Redwood</em>, the
+interface connector is a 7.5mm/5mm DC jack.</p>
+<p><strong>Power Interface Control Port – J10</strong></p>
+<p>The J10 port is designed to support an external daughter board providing PSID
+support. This feature is currently unsupported by the reference design.</p>
+<p><strong>3.5mm Audio Jack – J4</strong></p>
+<p>The DL-7450- Redwood quad video IOT Dock reference design incorporates a 3.5mm
+audio jack integrated with an I2S audio CODEC supporting a stereo headset with
+microphone.</p>
+<p><strong>3.5mm Microphone Audio Jack – J23</strong></p>
+<p>The DL-7450- Redwood quad video IOT Dock reference design also incorporates a
+selectable 3.5mm audio jack integrated with an I2S audio CODEC supporting a
+stereo microphone only. (Not currently supported by firmware)</p>
+<p><strong>Fingerprint Module Connector – J7</strong></p>
+<p>The DL-7450- Redwood quad video IOT Dock reference design has been designed to
+support an optional Synaptics FS76xx fingerprint sensor module. This feature is
+currently unsupported by the reference design.</p>
+<p><strong>RJ-45 10/100/1000 Ethernet – J5</strong></p>
+<p>A MotorComm YT8531C PHY has been provided to support 10/100/1000 Ethernet
+speeds via a RJ-45 connector. LEDs in the RJ-45 connector provide link and
+activity information. Link LED - Yellow LED to indicate that there is an active
+connection on the Ethernet port.  Speed/Activity LED</p>
+<p>The speed/activity LED blink when there is Ethernet activity, the link speed is
+indicated as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>10Mb Link Amber</p></li>
+<li><p>100Mb Link Amber</p></li>
+<li><p>1000Mb Link Green</p></li>
+</ul>
+</div></blockquote>
+<p><strong>2.5Gb Ethernet Interface – J6</strong></p>
+<p>When IOT functionality is required then the 2.5Gb Ethernet adapter must be
+used. The <em>Redwood</em> reference design provides support for a daughter board
+used to support a 2.5G Ethernet. PHY (The Maxlinear GPY211). The daughter board
+is interfaced via a mezzanine connector J6. Contact.</p>
+<p><strong>Debug Connector – J1</strong></p>
+<p>Debug connector J1 provides I2C and UART0 TX signals for debugging activities.</p>
+<blockquote>
+<div><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>PIN</p></th>
+<th class="head"><p>Connectivity</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>DL_SCL0</p></td>
+<td><p>DL-7450 I2C Clock, 10K pullup to +5V0 Power Plane</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>DL_SDA0</p></td>
+<td><p>DL-7450 I2C Data, 10K pullup to +5V0 Power Plane</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>5V_SYS</p></td>
+<td><p>Direct connection to +5V0 Power Plane</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>DLUART_TXD</p></td>
+<td><p>DL-7450 UART0 TXD -3V3 signal</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>GND</p></td>
+<td><p>Direct Connection to GND plane</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="security.html" class="btn btn-neutral float-right" title="Security" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024-2025 Synaptics Inc..
+      <span class="lastupdated">Last updated on 19 May 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

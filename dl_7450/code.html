@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deploying code &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Programming paradigm" href="paradigm.html" />
+    <link rel="prev" title="DL-7450 Tutorial" href="tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="start.html">Getting started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introducing the DL-7450</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html">DL-7450 Tutorial</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Deploying code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#send-code">Send code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#send-text-message">Send text message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#send-image">Send image</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="paradigm.html">Programming paradigm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickref.html">Quick reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../library/index.html">Python API reference guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="start.html">Getting started</a></li>
+      <li class="breadcrumb-item active">Deploying code</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/dl_7450/code.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="deploying-code">
+<span id="dl-7450-deploy-code"></span><h1>Deploying code<a class="headerlink" href="#deploying-code" title="Link to this heading"></a></h1>
+<p>When you receive your evaluation DL-7450 board, you will also receive some
+pieces of information that are required to deploy code to the board using the
+DisplayLink development server. Your account is identified by the following tokens:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ENTERPRISE-ID</span></code>: This is a token to identify the entity that owns the
+DL-7450. It is unique to your organisation, and serves to ensure that code
+can only be deployed to docks that you own.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">APPLICATION-KEY</span></code> and <code class="docutils literal notranslate"><span class="pre">APPLICATION-SECRET</span></code>: You can think of these as a
+username and password. They are secrets that are used as authentication
+tokens. They will be provided to you securely via the usual mechanisms for
+distributing DisplayLink artefacts to customers. Please treat these tokens
+as secret and do not distribute to anyone who is not authorised to deploy
+code to the DL-7450 evaluation board.</p></li>
+</ul>
+<p>In addition, you will be provided with a dock identifier, that looks like</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DOCK</span><span class="o">-</span><span class="n">ID</span> <span class="o">=</span> <span class="s2">&quot;BC385DB79E2B94DC70E44422FCFFB29C0D90FCA7F024AC72625D7376233CFC02&quot;</span>
+</pre></div>
+</div>
+<section id="send-code">
+<h2>Send code<a class="headerlink" href="#send-code" title="Link to this heading"></a></h2>
+<p>With these four pieces of information, the <a class="extlink-githubSamples reference external" href="https://github.com/DisplayLink/dl-7450/tree/main/scripts/send_code.py">send_code.py</a> script can be used for deploying code to the board:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>./scripts/send_code.py<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-k<span class="w"> </span>&lt;APPLICATION-KEY&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-s<span class="w"> </span>&lt;APPLICATION-SECRET&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-e<span class="w"> </span>&lt;ENTERPRISE-ID&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-d<span class="w"> </span>&lt;DOCK-ID&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-f<span class="w"> </span>myapplication.py
+</pre></div>
+</div>
+<p>You are free to design your own mechanism to deploy the code, based on this
+script. For completeness we provide a description of the deployment process.
+Code is sent to a DL-7450 by making an HTTP POST request to a REST endpoint in
+the DisplayLink development server, located at
+<a class="reference external" href="https://sandbox.vision.synaptics.com/">https://sandbox.vision.synaptics.com</a>. There are two steps.</p>
+<p>First, obtain an <em>access token</em> for your account. To do this, you need to POST
+the three tokens mentioned above to the login endpoint:
+<code class="docutils literal notranslate"><span class="pre">api/isv/application/login</span></code>. The body of the POST request should be a JSON
+string:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;data&quot;</span><span class="p">:{</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;isvApplicationLogin&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;attributes&quot;</span><span class="p">:{</span>
+         <span class="s2">&quot;clientId&quot;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">APPLICATION</span><span class="o">-</span><span class="n">KEY</span><span class="o">&gt;</span><span class="p">,</span>
+         <span class="s2">&quot;clientSecret&quot;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">APPLICATION</span><span class="o">-</span><span class="n">SECRET</span><span class="o">&gt;</span><span class="p">,</span>
+         <span class="s2">&quot;enterpriseId&quot;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">ENTERPRISE</span><span class="o">-</span><span class="n">ID</span><span class="o">&gt;</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If the credentials are correct, the HTTP response will have status code 201, and the body will be a JSON data structure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;data&quot;</span><span class="p">:{</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;1527b40212abb118a6d83a15&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;isvApplicationAuth&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;attributes&quot;</span><span class="p">:{</span>
+         <span class="s2">&quot;accessToken&quot;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">ACCESS</span><span class="o">-</span><span class="n">TOKEN</span><span class="o">&gt;</span>
+      <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;meta&quot;</span><span class="p">:{</span>
+      <span class="s2">&quot;createdTimestamp&quot;</span><span class="p">:</span><span class="mi">1588220310000</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The Access Token must be provided as an <em>Authorization</em> header in calls to deploy code:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">Authorization:</span> <span class="pre">Bearer</span> <span class="pre">&lt;ACCESS-TOKEN&gt;</span>
+<span class="pre">`</span></code></p>
+<p>See <a class="extlink-githubSamples reference external" href="https://github.com/DisplayLink/dl-7450/tree/main/scripts/send_code.py">send_code.py</a> for an example using the Python requests module.</p>
+<p>In order to send a Python application, it must be Base64 encoded. In <a class="extlink-githubSamples reference external" href="https://github.com/DisplayLink/dl-7450/tree/main/scripts/send_code.py">send_code.py</a>, the application code is read from a file as a byte string and then Base64 encoded, like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;application.py&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="n">code</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">CODE_TO_DEPLOY</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">code</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is the correct form for transmitting the code to the dock via the <code class="docutils literal notranslate"><span class="pre">docks\application\code</span></code> endpoint. The request body should look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;data&quot;</span><span class="p">:{</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;applicationCode&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;attributes&quot;</span><span class="p">:{</span>
+         <span class="s2">&quot;dockId&quot;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">DOCK</span><span class="o">-</span><span class="n">ID</span><span class="o">&gt;</span><span class="p">,</span>
+         <span class="s2">&quot;code&quot;</span><span class="p">:</span><span class="s2">&quot;CODE_TO_DEPLOY&quot;</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="send-text-message">
+<h2>Send text message<a class="headerlink" href="#send-text-message" title="Link to this heading"></a></h2>
+<p>You can also send a text message to the dock. The message is displayed on the splash screen. The message is sent to the <code class="docutils literal notranslate"><span class="pre">docks\application\message</span></code> endpoint. The request body should look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;data&quot;</span><span class="p">:{</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;applicationMessage&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;attributes&quot;</span><span class="p">:{</span>
+         <span class="s2">&quot;dockId&quot;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">DOCK</span><span class="o">-</span><span class="n">ID</span><span class="o">&gt;</span><span class="p">,</span>
+         <span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;TEXT_MESSAGE_TO_DISPLAY&quot;</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please make sure that the sent message starts with <code class="docutils literal notranslate"><span class="pre">t</span></code>. Otherwise, the message will not be consumed by the started application on the dock.</p>
+</div>
+<p>The <a class="extlink-githubSamples reference external" href="https://github.com/DisplayLink/dl-7450/tree/main/scripts/send_text.py">send_text.py</a> script can be used to send a text message to the dock:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>./scripts/send_text.py<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-k<span class="w"> </span>&lt;APPLICATION-KEY&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-s<span class="w"> </span>&lt;APPLICATION-SECRET&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-e<span class="w"> </span>&lt;ENTERPRISE-ID&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-d<span class="w"> </span>&lt;DOCK-ID&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-t<span class="w"> </span><span class="s2">&quot;Hello, World!&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="send-image">
+<h2>Send image<a class="headerlink" href="#send-image" title="Link to this heading"></a></h2>
+<p>You can also send an image to the dock. The image is displayed on the splash screen. The image is sent to the <code class="docutils literal notranslate"><span class="pre">docks\application\image</span></code> endpoint. The request body should look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;data&quot;</span><span class="p">:{</span>
+      <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;applicationMessage&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;attributes&quot;</span><span class="p">:{</span>
+         <span class="s2">&quot;dockId&quot;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">DOCK</span><span class="o">-</span><span class="n">ID</span><span class="o">&gt;</span><span class="p">,</span>
+         <span class="s2">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;RAW_IMAGE_DATA&quot;</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please make sure that the raw image data starts with <code class="docutils literal notranslate"><span class="pre">i</span></code>. Otherwise, the image will not be consumed by the started application on the dock.</p>
+</div>
+<p>The <a class="extlink-githubSamples reference external" href="https://github.com/DisplayLink/dl-7450/tree/main/scripts/send_image.py">send_image.py</a> script can be used to send an image to the dock:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>./scripts/send_image.py<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-k<span class="w"> </span>&lt;APPLICATION-KEY&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-s<span class="w"> </span>&lt;APPLICATION-SECRET&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-e<span class="w"> </span>&lt;ENTERPRISE-ID&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-d<span class="w"> </span>&lt;DOCK-ID&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-t<span class="w"> </span>&lt;LOCAL_PATH_TO_IMAGE_FILE&gt;
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial.html" class="btn btn-neutral float-left" title="DL-7450 Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="paradigm.html" class="btn btn-neutral float-right" title="Programming paradigm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024-2025 Synaptics Inc..
+      <span class="lastupdated">Last updated on 19 May 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

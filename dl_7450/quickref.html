@@ -1,0 +1,229 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick reference &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python API reference guide" href="../library/index.html" />
+    <link rel="prev" title="Programming paradigm" href="paradigm.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="start.html">Getting started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introducing the DL-7450</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html">DL-7450 Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code.html">Deploying code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paradigm.html">Programming paradigm</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Quick reference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#schedule-tasks">Schedule tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dock-information">Dock information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dock-control">Dock control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#splashscreen-control">Splashscreen control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#http-requests">HTTP requests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../library/index.html">Python API reference guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="start.html">Getting started</a></li>
+      <li class="breadcrumb-item active">Quick reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/dl_7450/quickref.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="quick-reference">
+<span id="dl-7450-quickref"></span><h1>Quick reference<a class="headerlink" href="#quick-reference" title="Link to this heading"></a></h1>
+<p>Below is a quick reference for the DL-7450 SDK.</p>
+<section id="schedule-tasks">
+<h2>Schedule tasks<a class="headerlink" href="#schedule-tasks" title="Link to this heading"></a></h2>
+<p>Use the <a class="reference internal" href="../library/wakeup.Timer.html#wakeup-timer"><span class="std std-ref">wakeup</span></a> class to scheule tasks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">wakeup</span><span class="w"> </span><span class="kn">import</span> <span class="n">Timer</span>
+
+<span class="n">timer1</span> <span class="o">=</span> <span class="n">wakeup</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="mi">60</span><span class="o">*</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># schedule a one-off task in 60 seconds time</span>
+<span class="n">timer2</span> <span class="o">=</span> <span class="n">wakeup</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>  <span class="c1"># schedule a task to repeat every second</span>
+</pre></div>
+</div>
+</section>
+<section id="dock-information">
+<h2>Dock information<a class="headerlink" href="#dock-information" title="Link to this heading"></a></h2>
+<p>Use the <a class="reference internal" href="../library/dock.DockInfo.html#dock-dockinfo"><span class="std std-ref">DockInfo</span></a> class to obtain current dock information:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dock</span><span class="w"> </span><span class="kn">import</span> <span class="n">DockInfo</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">DockInfo</span><span class="p">()</span>                <span class="c1"># obtain a dock information object</span>
+<span class="n">info</span><span class="o">.</span><span class="n">dock_id</span><span class="p">()</span>                   <span class="c1"># obtain the unique dock identifier</span>
+<span class="n">info</span><span class="o">.</span><span class="n">monitors</span><span class="p">()</span>                  <span class="c1"># obtain the connected monitor details</span>
+</pre></div>
+</div>
+</section>
+<section id="dock-control">
+<h2>Dock control<a class="headerlink" href="#dock-control" title="Link to this heading"></a></h2>
+<p>Use the <a class="reference internal" href="../library/dock.DockControl.html#dock-dockcontrol"><span class="std std-ref">DockControl</span></a> class to control dock settings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dock</span><span class="w"> </span><span class="kn">import</span> <span class="n">DockControl</span>
+
+<span class="n">control</span> <span class="o">=</span> <span class="n">DockControl</span><span class="p">()</span>          <span class="c1"># obtain a dock control object</span>
+<span class="n">control</span><span class="o">.</span><span class="n">set_timezone</span><span class="p">(</span><span class="s2">&quot;GMT&quot;</span><span class="p">)</span>      <span class="c1"># set the dock timezone</span>
+</pre></div>
+</div>
+</section>
+<section id="splashscreen-control">
+<h2>Splashscreen control<a class="headerlink" href="#splashscreen-control" title="Link to this heading"></a></h2>
+<p>Use the <a class="reference internal" href="../library/splashscreen.html#module-splashscreen" title="splashscreen: functions related to controlling the splash screen content"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">splashscreen</span></code></a> module to control the splash screen content:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">splashscreen</span><span class="w"> </span><span class="kn">import</span> <span class="n">Splashscreen</span><span class="p">,</span> <span class="n">Alignment</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">image</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">Splashscreen</span><span class="p">()</span>                             <span class="c1"># create a splash screen control interface</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">set_background</span><span class="p">(</span><span class="n">bg_image</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">PNG</span><span class="p">)</span>          <span class="c1"># set the splash screen background</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">add_text_box</span><span class="p">([</span><span class="s2">&quot;Hello, world&quot;</span><span class="p">])</span>               <span class="c1"># create text box in default message position</span>
+
+<span class="n">text_attributes</span> <span class="o">=</span> <span class="p">{</span>                                 <span class="c1"># control the position of text</span>
+  <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+  <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+  <span class="s2">&quot;alignment&quot;</span><span class="p">:</span> <span class="n">Alignment</span><span class="o">.</span><span class="n">RIGHT</span>
+<span class="p">}</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">add_text_box</span><span class="p">([</span><span class="s2">&quot;Welcome!&quot;</span><span class="p">],</span> <span class="n">text_attributes</span><span class="p">)</span>  <span class="c1"># create text box with attributes</span>
+</pre></div>
+</div>
+</section>
+<section id="http-requests">
+<h2>HTTP requests<a class="headerlink" href="#http-requests" title="Link to this heading"></a></h2>
+<p>Use the <a class="reference internal" href="../library/http.html#module-http" title="http: functions providing DisplayLink DL-7450 access to HTTP endpoints"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">http</span></code></a> module to perform HTTP requests:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">http</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://example.com&quot;</span><span class="p">)</span>  <span class="c1"># make an HTTP GET request</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="paradigm.html" class="btn btn-neutral float-left" title="Programming paradigm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../library/index.html" class="btn btn-neutral float-right" title="Python API reference guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024-2025 Synaptics Inc..
+      <span class="lastupdated">Last updated on 19 May 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

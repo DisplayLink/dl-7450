@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>class date – Represent a date &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class datetime – Represent a date and time" href="datetime.datetime.html" />
+    <link rel="prev" title="datetime – time manipulation functionality" href="datetime.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/start.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API reference guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#python-standard-libraries">Python standard libraries</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="binascii.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">binascii</span></code> – binary/ASCII conversions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="builtins.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">builtins</span></code> – builtin functions and exceptions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="datetime.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code> – time manipulation functionality</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="datetime.html#constants">Constants</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="datetime.html#classes">Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="hashlib.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code> – hashing algorithms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hmac.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hmac</span></code> – hashing algorithms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">io</span></code> – input/output streams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code> – JSON encoding and decoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="time.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code> – time related functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#micropython-modules">Micropython modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-foundation-libraries">DL-7450 foundation libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-dock-management-libraries">DL-7450 Dock Management libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-web-libraries">DL-7450 web libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-internet-of-things-libraries">DL-7450 Internet-of-Things libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Python API reference guide</a></li>
+          <li class="breadcrumb-item"><a href="datetime.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code> – time manipulation functionality</a></li>
+      <li class="breadcrumb-item active">class date – Represent a date</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/library/datetime.date.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="class-date-represent-a-date">
+<span id="datetime-date"></span><h1>class date – Represent a date<a class="headerlink" href="#class-date-represent-a-date" title="Link to this heading"></a></h1>
+<p>A representation of a date, according to the Gregorian calendar.</p>
+<p><a class="reference internal" href="#datetime.date" title="datetime.date"><code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code></a> objects support equality and comparison operators.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="datetime.date">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datetime.</span></span><span class="sig-name descname"><span class="pre">date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date" title="Link to this definition"></a></dt>
+<dd><p>Construct a date object representing the given <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code> and <code class="docutils literal notranslate"><span class="pre">day</span></code>.</p>
+<p>Arguments must be integers in the following ranges:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="datetime.html#datetime.datetime.MINYEAR" title="datetime.datetime.MINYEAR"><code class="xref py py-class docutils literal notranslate"><span class="pre">MINYEAR</span></code></a> &lt;= <code class="docutils literal notranslate"><span class="pre">year</span></code> &lt;= <a class="reference internal" href="datetime.html#datetime.datetime.MAXYEAR" title="datetime.datetime.MAXYEAR"><code class="xref py py-class docutils literal notranslate"><span class="pre">MAXYEAR</span></code></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> &lt;= <code class="docutils literal notranslate"><span class="pre">month</span></code> &lt;= <code class="docutils literal notranslate"><span class="pre">12</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> &lt;= <code class="docutils literal notranslate"><span class="pre">day</span></code> &lt;= number of days in the given month and year</p></li>
+</ul>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.date.today">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">today</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.today" title="Link to this definition"></a></dt>
+<dd><p>Construct a date object representing today’s year, month and day.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.date.fromtimestamp">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fromtimestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.fromtimestamp" title="Link to this definition"></a></dt>
+<dd><p>Construct a date object representing the year, month and day specified by the
+provided <code class="docutils literal notranslate"><span class="pre">timestamp</span></code>.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">timestamp</span></code> in this case is a floating point number representing the
+number of seconds since the epoch (January 1, 1970, 00:00:00 UTC).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.date.fromordinal">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fromordinal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ordinal</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.fromordinal" title="Link to this definition"></a></dt>
+<dd><p>Construct a date object representing the year, month and day specified by the
+provided <code class="docutils literal notranslate"><span class="pre">ordinal</span></code>.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">ordinal</span></code> is an integer representing the number of days since January
+1st of year 1.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.date.fromisoformat">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fromisoformat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.fromisoformat" title="Link to this definition"></a></dt>
+<dd><p>Construct a date object from a string in
+<a class="reference external" href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="s1">&#39;2012-12-21&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.date.min">
+<span class="sig-name descname"><span class="pre">min</span></span><a class="headerlink" href="#datetime.date.min" title="Link to this definition"></a></dt>
+<dd><p>The earliest representable date, <code class="docutils literal notranslate"><span class="pre">date(datetime.MINYEAR,</span> <span class="pre">1,</span> <span class="pre">1)</span></code>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.date.max">
+<span class="sig-name descname"><span class="pre">max</span></span><a class="headerlink" href="#datetime.date.max" title="Link to this definition"></a></dt>
+<dd><p>The latest representable date, <code class="docutils literal notranslate"><span class="pre">date(datetime.MAXYEAR,</span> <span class="pre">12,</span> <span class="pre">31)</span></code>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.date.resolution">
+<span class="sig-name descname"><span class="pre">resolution</span></span><a class="headerlink" href="#datetime.date.resolution" title="Link to this definition"></a></dt>
+<dd><p>The smallest possible difference between non-equal date objects,
+<code class="docutils literal notranslate"><span class="pre">timedelta(days=1)</span></code>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.date.year">
+<span class="sig-name descname"><span class="pre">year</span></span><a class="headerlink" href="#datetime.date.year" title="Link to this definition"></a></dt>
+<dd><p>The year of the date, an integer in the range <a class="reference internal" href="datetime.html#datetime.datetime.MINYEAR" title="datetime.datetime.MINYEAR"><code class="xref py py-class docutils literal notranslate"><span class="pre">MINYEAR</span></code></a>
+to <a class="reference internal" href="datetime.html#datetime.datetime.MAXYEAR" title="datetime.datetime.MAXYEAR"><code class="xref py py-class docutils literal notranslate"><span class="pre">MAXYEAR</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.date.month">
+<span class="sig-name descname"><span class="pre">month</span></span><a class="headerlink" href="#datetime.date.month" title="Link to this definition"></a></dt>
+<dd><p>The month of the date, an integer in the range <code class="docutils literal notranslate"><span class="pre">1</span></code> to <code class="docutils literal notranslate"><span class="pre">12</span></code>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datetime.date.day">
+<span class="sig-name descname"><span class="pre">day</span></span><a class="headerlink" href="#datetime.date.day" title="Link to this definition"></a></dt>
+<dd><p>The day of the date, an integer in the range <code class="docutils literal notranslate"><span class="pre">1</span></code> to the number of days
+in the month represented by <a class="reference internal" href="#datetime.date.month" title="datetime.date.month"><code class="xref py py-attr docutils literal notranslate"><span class="pre">month</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.date.replace">
+<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">self.year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">self.month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">self.day</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.replace" title="Link to this definition"></a></dt>
+<dd><p>Return a new <a class="reference internal" href="#datetime.date" title="datetime.date"><code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code></a> object with the same values as the
+existing date object, but with the specified parameters updated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.date.tuple">
+<span class="sig-name descname"><span class="pre">tuple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.tuple" title="Link to this definition"></a></dt>
+<dd><p>Return the date as a 3-tuple <code class="docutils literal notranslate"><span class="pre">(year,</span> <span class="pre">month,</span> <span class="pre">day)</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.date.timetuple">
+<span class="sig-name descname"><span class="pre">timetuple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.timetuple" title="Link to this definition"></a></dt>
+<dd><p>Return the date as a 9-tuple
+<code class="docutils literal notranslate"><span class="pre">(year,</span> <span class="pre">month,</span> <span class="pre">day,</span> <span class="pre">hour,</span> <span class="pre">minute,</span> <span class="pre">second,</span> <span class="pre">weekday,</span> <span class="pre">yearday,</span> <span class="pre">dst)</span></code>, as
+described in <a class="reference internal" href="datetime.datetime.html#datetime.datetime.timetuple" title="datetime.datetime.timetuple"><code class="xref py py-meth docutils literal notranslate"><span class="pre">datetime.datetime.timetuple()</span></code></a>.</p>
+<p>In this case:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">hour</span></code>, <code class="docutils literal notranslate"><span class="pre">minute</span></code> and <code class="docutils literal notranslate"><span class="pre">second</span></code> are all <code class="docutils literal notranslate"><span class="pre">0</span></code>, as the date object does
+not contain time information.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weekday</span></code> is the day of the week as an integer, where Monday is <code class="docutils literal notranslate"><span class="pre">0</span></code> and
+Sunday is <code class="docutils literal notranslate"><span class="pre">6</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">yearday</span></code> is the day of the year as an integer, where January 1st is
+<code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dst</span></code> is <code class="docutils literal notranslate"><span class="pre">-1</span></code>, as the date object does not contain daylight savings
+information.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.date.toordinal">
+<span class="sig-name descname"><span class="pre">toordinal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.toordinal" title="Link to this definition"></a></dt>
+<dd><p>Return an integer representing the ordinal of the date, where January 1st
+of year 1 has ordinal <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.date.isoformat">
+<span class="sig-name descname"><span class="pre">isoformat</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.isoformat" title="Link to this definition"></a></dt>
+<dd><p>Return a string representing the date in
+<a class="reference external" href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>,
+<code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+<span class="n">date</span><span class="p">(</span><span class="mi">2002</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+<span class="c1"># outputs &#39;2002-12-04&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.date.isoweekday">
+<span class="sig-name descname"><span class="pre">isoweekday</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.isoweekday" title="Link to this definition"></a></dt>
+<dd><p>Return the day of the week as an integer, where Monday is <code class="docutils literal notranslate"><span class="pre">1</span></code> and Sunday is
+<code class="docutils literal notranslate"><span class="pre">7</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datetime.date.weekday">
+<span class="sig-name descname"><span class="pre">weekday</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#datetime.date.weekday" title="Link to this definition"></a></dt>
+<dd><p>Return the day of the week as an integer, where Monday is <code class="docutils literal notranslate"><span class="pre">0</span></code> and Sunday is
+<code class="docutils literal notranslate"><span class="pre">6</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datetime.html" class="btn btn-neutral float-left" title="datetime – time manipulation functionality" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datetime.datetime.html" class="btn btn-neutral float-right" title="class datetime – Represent a date and time" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024-2025 Synaptics Inc..
+      <span class="lastupdated">Last updated on 19 May 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

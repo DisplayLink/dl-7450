@@ -1,0 +1,288 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hashlib – hashing algorithms &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="hmac – hashing algorithms" href="hmac.html" />
+    <link rel="prev" title="class tzinfo – Timezone information" href="datetime.tzinfo.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/start.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API reference guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#python-standard-libraries">Python standard libraries</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="binascii.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">binascii</span></code> – binary/ASCII conversions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="builtins.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">builtins</span></code> – builtin functions and exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datetime.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">datetime</span></code> – time manipulation functionality</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code> – hashing algorithms</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#constructors">Constructors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="hmac.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hmac</span></code> – hashing algorithms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="io.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">io</span></code> – input/output streams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="json.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code> – JSON encoding and decoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="time.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code> – time related functions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#micropython-modules">Micropython modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-foundation-libraries">DL-7450 foundation libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-dock-management-libraries">DL-7450 Dock Management libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-web-libraries">DL-7450 web libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-internet-of-things-libraries">DL-7450 Internet-of-Things libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Python API reference guide</a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code> – hashing algorithms</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/library/hashlib.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="module-hashlib">
+<span id="hashlib-hashing-algorithms"></span><h1><a class="reference internal" href="#module-hashlib" title="hashlib: hashing algorithms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code></a> – hashing algorithms<a class="headerlink" href="#module-hashlib" title="Link to this heading"></a></h1>
+<p>This module is a partial implementation of the corresponding CPython hashlib
+module, and contains some common binary data hashing algorithms. This module is
+part of the MicroPython core library.</p>
+<ul class="simple">
+<li><p>SHA256 - The current generation, modern hashing algorithm (of SHA2 series).
+It is suitable for cryptographically-secure purposes.</p></li>
+<li><p>SHA1 - A previous generation algorithm. Not recommended for new usages.</p></li>
+<li><p>MD5 - A legacy algorithm, not considered cryptographically secure.</p></li>
+</ul>
+<section id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Link to this heading"></a></h2>
+<p>In all of the following, <code class="docutils literal notranslate"><span class="pre">data</span></code> is any object that satisfies the buffer
+protocol, including string, byte, bytearray or memoryview objects.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="hashlib.hashlib.sha256">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hashlib.</span></span><span class="sig-name descname"><span class="pre">sha256</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#hashlib.hashlib.sha256" title="Link to this definition"></a></dt>
+<dd><p>Create an SHA256 hasher object and optionally feed <code class="docutils literal notranslate"><span class="pre">data</span></code> into it.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="hashlib.hashlib.sha1">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hashlib.</span></span><span class="sig-name descname"><span class="pre">sha1</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#hashlib.hashlib.sha1" title="Link to this definition"></a></dt>
+<dd><p>Create an SHA1 hasher object and optionally feed <code class="docutils literal notranslate"><span class="pre">data</span></code> into it.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="hashlib.hashlib.md5">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">hashlib.</span></span><span class="sig-name descname"><span class="pre">md5</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#hashlib.hashlib.md5" title="Link to this definition"></a></dt>
+<dd><p>Create an MD5 hasher object and optionally feed <code class="docutils literal notranslate"><span class="pre">data</span></code> into it.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">splashscreen</span><span class="w"> </span><span class="kn">import</span> <span class="n">Splashscreen</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">Splashscreen</span><span class="p">()</span>
+<span class="nb">hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;hello, world&quot;</span><span class="p">)</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">add_text_box</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;digest: </span><span class="si">{</span><span class="nb">hash</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># displays:</span>
+<span class="c1"># digest: b&#39;\xe4\xd7\xf1\xb4\xed.B\xd1X\x98\xf4\xb2{\x01\x9d\xa4&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading"></a></h2>
+<p>In all of the following, <code class="docutils literal notranslate"><span class="pre">data</span></code> is any object that satisfies the buffer
+protocol, including string, byte, bytearray or memoryview objects.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="hashlib.hash.update">
+<span class="sig-prename descclassname"><span class="pre">hash.</span></span><span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#hashlib.hash.update" title="Link to this definition"></a></dt>
+<dd><p>Feed more binary data into hash.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">splashscreen</span><span class="w"> </span><span class="kn">import</span> <span class="n">Splashscreen</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">Splashscreen</span><span class="p">()</span>
+<span class="nb">hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+<span class="nb">hash</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;, world&quot;</span><span class="p">)</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">add_text_box</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;digest: </span><span class="si">{</span><span class="nb">hash</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># displays:</span>
+<span class="c1"># digest: b&#39;\xe4\xd7\xf1\xb4\xed.B\xd1X\x98\xf4\xb2{\x01\x9d\xa4&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hashlib.hash.digest">
+<span class="sig-prename descclassname"><span class="pre">hash.</span></span><span class="sig-name descname"><span class="pre">digest</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hashlib.hash.digest" title="Link to this definition"></a></dt>
+<dd><p>Return hash for all data passed through hash, as a bytes object. After this
+method is called, no more data be fed into the hash.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+
+<span class="nb">hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+<span class="n">digest</span> <span class="o">=</span> <span class="nb">hash</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+
+<span class="c1"># either of the following calls results in an error</span>
+<span class="c1"># hash.update(b&quot;, world&quot;)</span>
+<span class="c1"># hash.digest()</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hashlib.hash.hexdigest">
+<span class="sig-prename descclassname"><span class="pre">hash.</span></span><span class="sig-name descname"><span class="pre">hexdigest</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hashlib.hash.hexdigest" title="Link to this definition"></a></dt>
+<dd><p>This method is NOT implemented. Use <code class="docutils literal notranslate"><span class="pre">binascii.hexlify(hash.digest())</span></code>
+to achieve a similar effect.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">binascii</span><span class="w"> </span><span class="kn">import</span> <span class="n">hexlify</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">splashscreen</span><span class="w"> </span><span class="kn">import</span> <span class="n">Splashscreen</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">Splashscreen</span><span class="p">()</span>
+<span class="nb">hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;hello, world&quot;</span><span class="p">)</span>
+
+<span class="c1"># The following line results in an error</span>
+<span class="c1"># screen.add_text_box(f&quot;hexdigest: {hash.hexdigest()}&quot;)</span>
+
+<span class="c1"># Use this instead:</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">add_text_box</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;hexdigest: </span><span class="si">{</span><span class="n">hexlify</span><span class="p">(</span><span class="nb">hash</span><span class="o">.</span><span class="n">digest</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># displays</span>
+<span class="c1"># hexdigest: b&#39;e4d7f1b4ed2e42d15898f4b27b019da4&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datetime.tzinfo.html" class="btn btn-neutral float-left" title="class tzinfo – Timezone information" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="hmac.html" class="btn btn-neutral float-right" title="hmac – hashing algorithms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024-2025 Synaptics Inc..
+      <span class="lastupdated">Last updated on 19 May 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

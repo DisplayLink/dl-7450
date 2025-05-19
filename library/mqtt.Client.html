@@ -1,0 +1,501 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>class MqttClient – communicate with an MQTT broker &mdash; DisplayLink DL-7450 SDK latest documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d5a28fe3" />
+      <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class MqttError" href="mqtt.MqttError.html" />
+    <link rel="prev" title="mqtt — An MQTT client for IoT services" href="mqtt.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            DisplayLink DL-7450 SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/start.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API reference guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#python-standard-libraries">Python standard libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#micropython-modules">Micropython modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-foundation-libraries">DL-7450 foundation libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-dock-management-libraries">DL-7450 Dock Management libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dl-7450-web-libraries">DL-7450 web libraries</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#dl-7450-internet-of-things-libraries">DL-7450 Internet-of-Things libraries</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="mqtt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mqtt</span></code> — An MQTT client for IoT services</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="mqtt.html#constants">Constants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mqtt.html#functions">Functions</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="mqtt.html#classes">Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="vision_client.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">vision_client</span></code> — functions and Classes for prototyping IoT applications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dl_7450/optimization.html">Optimization for Micropython</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DisplayLink DL-7450 SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Python API reference guide</a></li>
+          <li class="breadcrumb-item"><a href="mqtt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mqtt</span></code> — An MQTT client for IoT services</a></li>
+      <li class="breadcrumb-item active">class MqttClient – communicate with an MQTT broker</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/library/mqtt.Client.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+    <div class="wy-alert wy-alert-danger">
+      <p>
+				This is a preview version of the DisplayLink DL-7450 Software
+				Development Kit Documentation. The functionality that is described and
+				made available in this version is subject to addition, removal or
+				change without warning.
+      </p>
+    </div>
+  
+  
+           <div itemprop="articleBody">
+             
+  <section id="class-mqttclient-communicate-with-an-mqtt-broker">
+<span id="mqtt-client"></span><h1>class MqttClient – communicate with an MQTT broker<a class="headerlink" href="#class-mqttclient-communicate-with-an-mqtt-broker" title="Link to this heading"></a></h1>
+<p>The <a class="reference internal" href="#mqtt.MqttClient" title="mqtt.MqttClient"><code class="xref any py py-class docutils literal notranslate"><span class="pre">MqttClient</span></code></a> class provides the functionality to enable the DL-7450 to
+become an MQTT client. All of the methods are implemented asynchronously, i.e.
+the call returns control to the application quickly, and informs the
+application through relevant callbacks about MQTT events.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mqtt.MqttClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mqtt.</span></span><span class="sig-name descname"><span class="pre">MqttClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">broker_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="builtins.html#str" title="str"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="builtins.html#str" title="str"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MqttClient" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Create an MQTT client class that is able to connect to the given broker. The
+client is created in a ready-to-connect state and the actual connection is
+initiated in the <a class="reference internal" href="#mqtt.MqttClient.connect" title="mqtt.MqttClient.connect"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">MqttClient.connect</span></code></a> call. If this call fails an
+<a class="reference internal" href="mqtt.MqttError.html#mqtt.MqttError" title="mqtt.MqttError"><code class="xref any py py-class docutils literal notranslate"><span class="pre">MqttError</span></code></a> will be generated.</p>
+<p>The arguments to this constructor are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>broker_url</em> is the address of the MQTT broker, in the usual form
+<em>scheme://host:port</em>. The scheme must be one of the values below,
+otherwise an error is raised. The host can be either an IP address or a
+host name. If omitted, the default port listed below will be used.</p></li>
+<li><p><em>client_id</em> is a mandatory UTF-8 encoded string containing the MQTT client ID.</p></li>
+</ul>
+</div></blockquote>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>URL Scheme</p></th>
+<th class="head"><p>Connection Type</p></th>
+<th class="head"><p>Default Port</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tcp</span></code></p></td>
+<td><p>Insecure MQTT</p></td>
+<td><p>1883</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mqtt</span></code></p></td>
+<td><p>Insecure MQTT</p></td>
+<td><p>1883</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ssl</span></code></p></td>
+<td><p>Secure MQTT</p></td>
+<td><p>8883</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mqtts</span></code></p></td>
+<td><p>Secure MQTT</p></td>
+<td><p>8883</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ws</span></code></p></td>
+<td><p>MQTT over insecure websocket</p></td>
+<td><p>80</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">wss</span></code></p></td>
+<td><p>MQTT over secure websocket</p></td>
+<td><p>443</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="admonition-preview-feature admonition">
+<p class="admonition-title">Preview feature</p>
+<p>Web sockets are provided as a preview feature in this version of the DL-7450
+SDK. Please get in touch to provide feedback or report any issues.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt.MqttClient.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on_connect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MqttClient.connect" title="Link to this definition"></a></dt>
+<dd><p>This method initiates a connection to the broker. The connection occurs
+asynchronously, and informs the application when the connection has succeeded
+or failed.</p>
+<p>The <em>on_connect</em> argument is any callable entity which takes two arguments.
+The first argument is an integer, <em>rc</em> which indicates whether the broker
+accepted the connection or not. A zero or positive value is the value
+returned from the broker, and the meaning is given in the table below.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Status</p></th>
+<th class="head"><p>Reason</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Connection Accepted</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Connection Refused, unacceptable MQTT protocol</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Connection Refused, identifier rejected</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Connection Refused, server unavailable</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Connection Refused, bad user name or password</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>Connection Refused, not authorised</p></td>
+</tr>
+</tbody>
+</table>
+<p>A negative value indicates that the connection attempt was not initiated for
+some reason, and the value corresponds to one of the values of the
+<a class="reference internal" href="mqtt.MqttError.html#mqtt.MqttError" title="mqtt.MqttError"><code class="xref any py py-class docutils literal notranslate"><span class="pre">MqttError</span></code></a> codes. The second argument, <em>flags</em> is a dictionary and is
+unused in the present version of the DL-7450 SDK.  The callback is invoked
+asynchronously, when the connection is established, or when a connection
+cannot be established for some reason.</p>
+<p>It is important to note that the <em>on_connect</em> callback can be called
+multiple times. In particular if a connection is made successfully, but is
+later lost, the callback will be invoked twice, the second time as a
+failure. The MQTT will <em>automatically attempt to reconnect to the broker</em>.
+If this reconnection attempt is successful, yet another invocation of the
+<em>on_connect</em> callback will occur.</p>
+<p>Example 1: the Client attempts to connect to the server, but does not
+provide the correct username and password. The <em>on_connect</em> callback will
+be invoked with status = 4. No further connection attempt will be made, and
+the failure is permanent.</p>
+<p>Example 2: the client connects successfully. The <em>on_connect</em> callback is
+invoked with status = 0. Some time later, the local network is becomes
+unavailable. On the next failed ping attempt (see the <em>keepAlive</em> option),
+the <em>on_connect</em> callback is invoked with status = -1. However, the client
+will attempt to reconnect to the broker. The first attempt is after 1
+seconds, then 2, 4, 8, 16 and 32 seconds subsequently, and from then every
+1 minute. When the network is available again, and the client reconnects,
+the <em>on_connect</em> callback is invoked again with status = 0.</p>
+<p>It is advisable for the application to keep track of the connection status.
+An example of an <em>on_connect</em> callback:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">connected</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">on_connect</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">rc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="c1"># connection accepted by the broker</span>
+    <span class="n">connected</span> <span class="o">=</span> <span class="kc">True</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">rc</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="c1"># permanent failure...</span>
+    <span class="k">if</span> <span class="n">rc</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="n">connected</span> <span class="o">=</span> <span class="kc">False</span>
+      <span class="n">errMsg</span> <span class="o">=</span> <span class="n">mqtt</span><span class="o">.</span><span class="n">ErrorDescription</span><span class="p">(</span><span class="n">rc</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">connected</span><span class="p">:</span>
+        <span class="c1"># connection lost. Reconnect attempt follows</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># report or handle error. Reconnect attempt follows</span>
+</pre></div>
+</div>
+<p><em>options</em> is a dictionary that contains a variety of optional parameters
+for this connection. The possible key-value pairs are described below. All
+are optional with default values, but some combinations of the options are
+invalid.</p>
+<p><strong>Connect Options:</strong></p>
+<table class="docutils align-left">
+<colgroup>
+<col style="width: 23.1%" />
+<col style="width: 76.9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>keep_alive</em></p></td>
+<td><p>The time, in seconds, between attempts by the server
+(PING requests) to establish whether the client is unresponsive or
+disconnected. If this value is omitted, the keep alive mechanism is not
+enabled.</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>username</em></p></td>
+<td><p>This is the MQTT username and must be a valid UTF-8
+string. If <em>username</em> is provided, <em>password</em> may be omitted. A
+<em>password</em> with no <em>username</em> is not allowed.</p></td>
+</tr>
+<tr class="row-even"><td><p><em>password</em></p></td>
+<td><p>This is the MQT password. The password must be a valid
+string, bytes or bytearray. If <em>username</em> is provided, <em>password</em> may be
+omitted. A <em>password</em> with no <em>username</em> is not allowed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>will_topic</em></p></td>
+<td><p>This must be a valid UTF-8 string representing the topic
+for the will message to be published on. This option forms part of the
+will message and if not provided or is <em>None</em>, then no will message is
+defined.</p></td>
+</tr>
+<tr class="row-even"><td><p><em>will_qos</em></p></td>
+<td><p>This must be a valid <em>will_qos</em>, i.e. an integer 0, 1 or
+2. This option forms part of the will message and if not provided or is <em>None</em>, then no will message is defined.</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>will_message</em></p></td>
+<td><p>The payload, <em>will_message</em>, maybe empty or None, or a
+string, bytearray or bytes object. This option forms part of the will
+message and if not provided or is <em>None</em>, then no will message is
+defined.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Secure Sockets Layer (SSL) options:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23.1%" />
+<col style="width: 76.9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>trust_store</em></p></td>
+<td><p>The broker certificate’s chain-of-trust in PEM or DER
+form. If provided must be a valid string, bytearray or bytes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>private_key</em></p></td>
+<td><p>The client’s private key in PEM format, used when the
+broker requires client certificate authentication. Must be a valid
+string, bytearray or bytes object</p></td>
+</tr>
+<tr class="row-even"><td><p><em>key_store</em></p></td>
+<td><p>The client’s public certificate chain in PEM format. Must
+be a valid string, bytearray or bytes object. May include the private
+key, or the private key may be provided separately.</p></td>
+</tr>
+</tbody>
+</table>
+<p>With the preceding constraints, any of options may be omitted or None, and
+their default values will be used. The presence of an unrecognised option
+will lead to a <em>TypeError</em> being raised.</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>clean_session</em> option is currently set to 0 and cannot be changed in
+this version of the DL-7450 SDK.</p>
+<p>The client automatically attempts to reconnect to the broker when a
+connection attempt fails. The minimum time for the retry is 1 second. If
+this fails, the next retry is 2 seconds, so on through 4, 8, 16 and 32
+seconds. After that, further attempts occur every minute. This procedure
+resets once a successful connection is made.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt.MqttClient.publish">
+<span class="sig-name descname"><span class="pre">publish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MqttClient.publish" title="Link to this definition"></a></dt>
+<dd><p>This method initiates the publication of a message to the broker. The
+parameters are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>topic</em> a valid UTF-8 string that is the topic the message will be
+published on.</p></li>
+<li><p><em>message</em> the payload of the MQTT message. It must be a valid string,
+bytearray or bytes object.</p></li>
+<li><p><em>qos</em> the quality-of-service level for this message.</p></li>
+</ul>
+</div></blockquote>
+<p>This call will raise a <em>TypeError</em> if the parameter combination does not
+define a valid MQTT message. In particular, a zero-length topic is not
+allowed, and <em>qos</em> must be an integer 0, 1 or 2. The <em>message</em> can be
+empty.</p>
+<p>The return value is an integer, <em>mid</em>, which is an identifier for the message
+just published. It is used in the <em>on_publish</em> callback to identify which
+messages have been successful or unsuccessful.</p>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mqtt</span><span class="w"> </span><span class="kn">import</span> <span class="n">MqttClient</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">MqttClient</span><span class="p">(</span><span class="s1">&#39;ssl://my.broker:8883&#39;</span><span class="p">,</span> <span class="s1">&#39;myclientid&#39;</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="mi">42</span>
+<span class="p">}</span>
+
+<span class="n">mid</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/device/status</span><span class="si">{</span><span class="n">myclientid</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If this method is called on a disconnected client, the message will be
+sent when the client next becomes connected. However the message will be
+lost if the client goes out of scope (e.g. via a reboot of the DL-7450).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt.MqttClient.subscribe">
+<span class="sig-name descname"><span class="pre">subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topics</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MqttClient.subscribe" title="Link to this definition"></a></dt>
+<dd><p>This methods initiates a subscription to one or more topics. The parameter
+<em>topics</em> is a single 2-tuple or a list of 2-tuples, where each 2-tuple is
+of the form <em>(topic, qos)</em>. The topic must be a valid, non-empty, str,
+which may contain valid topic wildcards. <em>qos</em> is an integer 0, 1 or 2,
+indicating the quality-of-service required for the subscription.</p>
+<p>The return value is an integer: a negative value indicates that the
+subscription attempt was not initiated for some reason, and the value
+corresponds to one of the values of the <a class="reference internal" href="mqtt.MqttError.html#mqtt.MqttError" title="mqtt.MqttError"><code class="xref any py py-class docutils literal notranslate"><span class="pre">MqttError</span></code></a> codes.  A positive
+value is a message identifier, <em>mid</em>, which identifies the subscription
+request. It is used in the <em>on_subscribe</em> callback to refer back to which
+topics have been subscribed to. Subscriptions are often set up in the
+<em>on_connect</em> callback following a successful connection to a broker.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt.MqttClient.on_message">
+<span class="sig-name descname"><span class="pre">on_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MqttClient.on_message" title="Link to this definition"></a></dt>
+<dd><p>Set up a handler function for messages that the client receives on its
+subscribed topics.  Please note, if the client will only publish messages
+then it is not necessary to set up a message handler. The <em>callback</em> is
+any Python callable entity that takes two parameters, the topic that the
+message has been sent on, and the message itself, as a bytearray. The
+application should interpret the bytearray appropriately.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mqtt</span><span class="w"> </span><span class="kn">import</span> <span class="n">MqttClient</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">on_message</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+   <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;/urgent/maintenance&quot;</span><span class="p">:</span>
+      <span class="n">my_msg</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+      <span class="c1"># etc</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">MqttClient</span><span class="p">(</span><span class="s1">&#39;ssl://mybroker.com:8883&#39;</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">on_message</span><span class="p">(</span><span class="n">on_message</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mqtt.MqttClient.on_subscribe">
+<span class="sig-name descname"><span class="pre">on_subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mqtt.MqttClient.on_subscribe" title="Link to this definition"></a></dt>
+<dd><p>Register a callback that is invoked when the broker responds to a
+subscribe request. The <em>callback</em> is a callable entity that takes two
+arguments. The first is an integer, <em>mid</em>, which corresponds to the
+message identifier that was returned by the <a class="reference internal" href="#mqtt.MqttClient.subscribe" title="mqtt.MqttClient.subscribe"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">MqttClient.subscribe</span></code></a> call.
+The second argument, <em>granted_qos</em> is a list of integers corresponding to
+the quality-of-service granted for each of the subscriptions in the
+request.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mqtt.html" class="btn btn-neutral float-left" title="mqtt — An MQTT client for IoT services" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mqtt.MqttError.html" class="btn btn-neutral float-right" title="class MqttError" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright - The DisplayLink DL-7450 SDK Documentation is Copyright © 2024-2025 Synaptics Inc..
+      <span class="lastupdated">Last updated on 19 May 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Versions and Downloads</span>
+    latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="//en/latest">latest</a></dd>
+      
+    </dl>
+    <dl>
+      <dt>Downloads</dt>
+      
+    </dl>
+    <hr/>
+    <dl>
+      <dt>External links</dt>
+        <dd>
+          <a href="https://github.com/DisplayLink/dl-7450">GitHub</a>
+        </dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
